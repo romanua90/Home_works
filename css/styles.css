@@ -1,5 +1,41 @@
-p{
-    padding: 10px;
-    box-sizing: border-box;
-    background: rgb(94, 8, 8);
+#list{
+	background-color:lightgray;
+	color:red;
+	font-size:18px;
+	font-weight: bolder;
 }
+.img_format{
+	text-align:center; 
+	margin: 0px 5px 0px 5px;
+	padding-bottom:10px;
+	padding-top: 10px;
+	background-color: lightgray;
+}
+h1{
+	font-family:cursive;
+	font-size:45px;
+	text-decoration: underline;
+	color: orange;
+	text-align: center;
+}
+p{
+	margin-left:15px;
+	background:lightskyblue;
+}
+ul {
+	background:lightyellow;
+}
+span {
+	color:red;
+	text-decoration: underline;
+	background-color: yellow;
+	margin:20px;
+	font-size: 20px; 
+	font-weight:bold;
+	font-style:italic;
+}
+img{
+	width:300px;
+	border: 1px solid red;
+}
+

@@ -1,10 +1,12 @@
 * {
     box-sizing: border-box;
-    margin:0;
+    margin: 0;
 }
+
 html, body {
     font-family: 'Fira Sans', sans-serif;
 }
+
 .menu {
     font-size: 11px;
     line-height: 1.4em;
@@ -14,52 +16,62 @@ html, body {
     overflow: hidden;
     text-align: center;
     font-weight: 800;
-       }
-.header{
+}
+
+.header {
     background: #f4f5f7;
     text-align: center;
     height: 50px;
     text-align: center;
     font-size: 20px;
 }
+
 .project_menu {
-        display:flex;
-        justify-content: center;
+    display: flex;
+    justify-content: center;
 }
-.menu_item{
+
+.menu_item {
     margin-right: 15px;
 }
+
 li, ul {
     list-style-type: none;
 }
+
 a {
     text-decoration: none;
     color: #1a1a1a;
 }
-.header_title{
+
+.header_title {
     height: 87px;
     background: #7e0019;
-    padding: 12px 0;
+    /*padding: 12px 0;*/
+    padding: 0 100px;
     border-bottom: #7e0019 1px solid;
     color: white;
     text-align: center;
-    font-family:"Times New Roman";
-    display: flex;
-    justify-content:center;
-    flex-wrap: wrap;
+    display: flex;	
 }
-.title{
-    margin-left: 300px;
+
+.title {
+    margin-left: 300;
+	align-self: center;
+	
 }
-.first{
+
+.first {
     font-size: 35px;
-    font-style:initial;
+	font-family: "Times New Roman";
+    font-style: initial;
     font-weight: bold;
     text-transform: uppercase;
 }
-.second{
-    font-size: 15px;
-    font-style:initial;
+
+.second {
+    font-size: 13px;
+    font-style: initial;
     text-transform: uppercase;
 }
 
@@ -73,22 +85,33 @@ a {
     text-align: center;
     font-weight: 800;
 }
-.subproject_menu{
+
+.subproject_menu {
     display: flex;
     justify-content: center;
 }
-.lang{
-    color: white;
+
+.lang {
     font-size: 13px;
-    line-height: 1.4em;
     text-transform: uppercase;
-    padding-top: 10px;
-    padding-bottom: 8px;
-    overflow: hidden;
-    text-align:inherit;
     font-weight: 800;
-    box-sizing:border-box;
-    margin-left: 400px;
+	justify-self: flex-end;
 
+}
+.lang a{
+    color: snow;
+}
 
+.button1{
+   font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 800;
+	margin-left: -10;
+}
+
+.all_sections{
+   font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 800;
+	
 }

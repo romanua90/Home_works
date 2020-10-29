@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body {
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.menu {
+    font-size: 11px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    overflow: hidden;
+    text-align: center;
+    font-weight: 800;
+}
+
+.header {
+    background: #f4f5f7;
+    display:flex;
+	justify-content:center;
+	align-items: center;
+    height: 50px;
+    font-size: 20px;
+}
+
+.project_menu {
+    display: flex;
+    justify-content: center;
+}
+
+.menu_item {
+    margin-right: 15px;
+}
+
+li, ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #1a1a1a;
+}
+
+.header_title {
+    height: 87px;
+    background: #7e0019;
+    /*padding: 12px 0;*/
+    padding: 0 100px;
+    border-bottom: #7e0019 1px solid;
+    color: white;
+    text-align: center;
+    display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.title {
+    margin-left: 300;
+	align-self: center;
+	
+}
+
+.first {
+    font-size: 35px;
+	font-family: "Times New Roman";
+    font-style: initial;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.second {
+    font-size: 13px;
+    font-style: initial;
+    text-transform: uppercase;
+}
+
+.sub_menu {
+    font-size: 13px;
+    line-height: 1.4em;
+    text-transform: uppercase;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    overflow: hidden;
+    text-align: center;
+    font-weight: 800;
+}
+
+.subproject_menu {
+    display: flex;
+    justify-content: center;
+}
+
+.lang {
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 800;
+	}
+	
+.lang a{
+    color: snow;
+
+}
+
+.button1 a{
+   color: snow;
+   font-size: 13px;
+   text-transform: uppercase;
+   font-weight: 800; 
+   text-align: center;
+}
+
+.all_sections{
+   font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 800;
+	
+}
+.lang_button{
+	display:flex;
+	
+}
+
+.border_button1{
+	min-width: 85px;
+    height:36px;
+    border: #fff 3px solid;
+    background: #b30c1d;
+    border-radius: 20px;
+    position: relative;
+    top: -8px;
+    margin-left: 15px;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+}
+    

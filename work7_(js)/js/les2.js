@@ -207,12 +207,258 @@
 
 // - Дан масив [1, 2, 3, 4, 5]. За допомогою методу/функції splice зробіть з нього масив [1, 'a', 'b', 2, 3, 4, 'c', 5, 'e'].
 
-let arr = [1, 2, 3, 4, 5];
-    arr.splice(1,4,2, 'a', 'b', 2, 3, 4, 'c', 5, 'e');
-        console.log(arr);
+// let arr = [1, 2, 3, 4, 5];
+//   arr.splice(1,4,'a', 'b', 2, 3, 4, 'c', 5, 'e');
+//        console.log(arr);
 // - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
+
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//    for(i=0; i<arr.length; i++)
+//	{
+//		if(arr[i]%2===0){
+//		console.log(arr[i]);
+//		}
+//
+//	}
 // - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив. За допомогою будь-якого циклу та push () скопіювати значення одного масиву в інший
+
+
+//let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//let EmptyArr=[];
+//    for(i=0; i<arr.length; i++)
+//	{
+//	EmptyArr.push(arr[i]);
+//	}
+//	console.log("New array=>", EmptyArr, "Old array=>", arr);
 // - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
 
+/*let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let EmptyArr=[];
+for(i=0; i<arr.length; i++)
+{
+EmptyArr[i]=arr[i];
+}
+console.log("New array=>", EmptyArr, "Old array=>", arr); */
+
+//	зробити масив з 10 чисел [2,17,13,6,22,31,45,66,100,-18]та:
+let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
+let i=0;
+//1. перебрати його циклом while
+
+//let i=0;
+//while(i<arr.length){
+//console.log(arr[i]);
+// i++
+//}
+//2. перебрати його циклом for
+
+// for (i=0;i<arr.length; i++){
+// console.log(arr[i]);
+//  }
+
+//3. перебрати циклом while та вивести  числа тільки з непарним індексом
+
+//let i=0;
+//while(i<arr.length){
+//	if(i%2===1){
+//		console.log(arr[i]);
+//}
+//i++;
+//}
+//
+
+//4. перебрати циклом for та вивести  числа тільки з непарним індексом
+
+//for (i=0;i<arr.length; i++){
+//	if(i%2===1){
+// console.log(arr[i]);
+//  }
+//}
+//5. перебрати циклом while та вивести  числа тільки парні  значення
+
+//while(i<arr.length){
+//	if(arr[i]%2===0){
+//		console.log(arr[i]);
+//			}
+//		i++;
+//}
+
+//6. перебрати циклом for та вивести  числа тільки парні  значення
+
+//for (i=0;i<arr.length; i++){
+//	if(arr[i]%2===0){
+// console.log(arr[i]);
+// }
+//}
+
+//7. замінити кожне число кратне 3 на слово "okten"
+
+// for (i=0;i<arr.length; i++){
+// 	if(arr[i]%3===0){
+// arr[i]="okten";
+// }
+//}
+// console.log(arr);
+
+//8. вивести масив в зворотньому порядку.
+
+// for (i=arr.length;i>= 0; i--){
+// 	 console.log(arr[i]);
+
+//}
+//console.log(arr.reverse());
+
+//9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
 
 
+
+//10
+// створити пустий масив та :
+//- заповнити його 50 парними числами за допомоги циклу.
+/*let EmptyArr=[];
+for (i=0;i<50;i++){
+	while ((EmptyArr[i]%2)!==0){
+	EmptyArr[i]=parseInt(Math.random() * 100);
+	}
+			EmptyArr[i]=parseInt(EmptyArr[i]);
+}
+console.log(EmptyArr);
+*/
+
+//- заповнити його 50 непарними числами за допомоги циклу.
+/*let EmptyArr=[];
+for (i=0;i<50;i++){
+	while ((EmptyArr[i]%2)!==1){
+	EmptyArr[i]=parseInt(Math.random() * 100);
+	}
+			EmptyArr[i]=parseInt(EmptyArr[i]);
+}
+console.log(EmptyArr);*/
+
+//1
+// створити пустий масив та :
+//1. заповнити його 50 парними числами за допомоги циклу.
+//let EmptyArr=[];
+//let Counter=0;
+//for (i=0;i<50;i++){
+//	EmptyArr[i]=Counter;
+//	Counter+=2;
+//}
+//console.log(EmptyArr);
+
+//2. заповнити його 50 непарними числами за допомоги циклу.
+
+/*let EmptyArr=[];
+let Counter=1;
+for (i=0;i<50;i++){
+	EmptyArr[i]=Counter;
+	Counter+=1;
+}
+console.log(EmptyArr); */
+
+//3. используя Math.random заполнить массив из ???(сколько хотите) элементов.
+/*let EmptyArr=[];
+for (i=0;i<100;i++){
+	EmptyArr[i]=parseInt(Math.random()*200);
+}
+console.log(EmptyArr);*/
+
+// диапазон рандома 8 до 732. (но сначала пробуйте БЕЗ ДИАПАЗОНА!)
+//let EmptyArr=[];
+//for (i=0;i<100;i++){
+//	EmptyArr[i]=parseInt((Math.random() * (732 - 8 + 1)) + 8);
+//}
+//console.log(EmptyArr);
+
+// 2. вывести на консоль  каждый третий елемент
+
+/*let EmptyArr=[];
+for (i=0;i<15;i++){
+	EmptyArr[i]=parseInt(Math.random()*200);
+}
+for (Counter=2; Counter<EmptyArr.length; Counter+=3){
+	console.log(EmptyArr[Counter]);
+	}
+console.log("Whole array:",EmptyArr);*/
+
+// 3. вывести на консоль  каждый третий елемент
+// но при условии что его значение является парным.
+
+/*let EmptyArr=[];
+for (i=0;i<15;i++){
+	EmptyArr[i]=parseInt(Math.random()*200);
+}
+for (Counter=2; Counter<EmptyArr.length; Counter+=3){
+	if(EmptyArr[Counter]%2===0){
+	console.log(EmptyArr[Counter]);
+	}
+}
+console.log("Whole array:",EmptyArr);*/
+
+// 4. вывести на консоль  каждый третий елемент
+// но при условии что он имеет парное значение и
+// записать их в другой массив.
+/*
+let EmptyArr=[];
+let SecondArr=[];
+for (i=0;i<15;i++){
+	EmptyArr[i]=parseInt(Math.random()*200);
+}
+for (Counter=2; Counter<EmptyArr.length; Counter+=3){
+	if(EmptyArr[Counter]%2===0){
+	console.log(EmptyArr[Counter]);
+	SecondArr.push(EmptyArr[Counter]);
+	}
+}
+console.log("First array:",EmptyArr);
+console.log("Second array:",SecondArr); */
+
+// 5. Вывести каждый елемент массива у которого соседний с права элемент - парный
+/*
+let EmptyArr=[];
+for (i=0;i<15;i++){
+	EmptyArr[i]=parseInt(Math.random()*200);
+}
+for (Counter=0; Counter<EmptyArr.length; Counter++){
+	if(EmptyArr[Counter+1]%2===0){
+	console.log(EmptyArr[Counter]);
+	
+	}
+}
+console.log("First array:",EmptyArr);
+*/
+
+//  5 масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. обрахувати середній чек.
+
+/*let Buy=[100,250,50,168,120,345,188];
+let Avg=0;
+for (i=0;i<Buy.length;i++){
+	Avg=Avg+Buy[i];
+}
+console.log (Math.round(Avg/Buy.length));*/
+
+//3 створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
+/*let EmptyArr=[];
+let SecondArr=[];
+for (i=0;i<10;i++){
+	EmptyArr[i]=parseInt(Math.random()*200);
+}
+for (Counter=0; Counter<EmptyArr.length; Counter++){
+		SecondArr.push(EmptyArr[Counter]*5);
+	
+}
+console.log("First array:",EmptyArr);
+console.log("Second array:",SecondArr);
+*/
+//4 створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо об'єкт є числом,
+// додати його в інший масив.
+let EmptyArr=["hello",true, 123,-4.5, false, NaN, null, undefined, BigInt, '-453434235235', 0,546, 3];
+let SecondArr=[];
+
+for (Counter=0; Counter<EmptyArr.length; Counter++){
+	if(typeof (EmptyArr[Counter]) ==="number"){
+		SecondArr.push(EmptyArr[Counter]);
+	}
+}
+console.log("First array:",EmptyArr);
+console.log("Second array:",SecondArr);

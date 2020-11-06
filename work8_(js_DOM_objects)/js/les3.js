@@ -136,19 +136,37 @@
 // document.getElementById("rules").textContent="I am Roman, and I am studying HTML";
 // document.write("</br>",document.getElementById("rules").textContent);
 // - змініть кожному елементу колір фону на червоний
-document.getElementById('rules').style.backgroundColor='red';
-document.getElementById('content').style.backgroundColor='red';
+let styleId1=document.getElementById('rules');
+// styleId1.style.backgroundColor='red';
+let styleId2=document.getElementById('content');
+// styleId2.style.backgroundColor='red';
 let styleClass= document.getElementsByClassName("fc_rules");
-let styleTag= document.getElementsByTagName("body");
-for ( stKey=0;stKey<styleClass.length; stKey++) {
-    styleClass[stKey].style.backgroundColor='green';
-}
-for ( stKey=0;stKey<styleTag.length; stKey++) {
-    styleTag[stKey].style.backgroundColor='orange';
-}
+let styleTag= document.getElementsByTagName("div");
+// for (let stKey=0;stKey<styleClass.length; stKey++) {
+//     styleClass[stKey].style.backgroundColor='red';
+// }
+// for (let stKey=0;stKey<styleTag.length; stKey++) {
+//     styleTag[stKey].style.backgroundColor='red';
+// }
 
 // - змініть кожному елементу колір тексту на синій
+for (let i=0;i<styleClass.length; i++) {
+    styleClass[i].style.color='blue';
+}
+for (let j=0;j<styleTag.length; j++) {
+    styleTag[j].style.color='blue';
+}
+styleId2.style.color='blue';
+
+
+
 // - отримати весь список класів елемента з id=rules і вивести їх в console.log
+console.log(styleId1.classList);
 // - отримати всі елементи з класом fc_rules
+let allElemfc_rules= document.getElementsByClassName('fc_rules');
+console.log(allElemfc_rules);
 // - поміняти колір тексту у всіх елементів fc_rules на червоний
 
+for (let k=0;k<allElemfc_rules.length; k++) {
+    allElemfc_rules[k].style.color='red';
+}

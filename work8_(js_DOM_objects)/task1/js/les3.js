@@ -150,13 +150,13 @@ let styleTag= document.getElementsByTagName("div");
 // }
 
 // - змініть кожному елементу колір тексту на синій
-for (let i=0;i<styleClass.length; i++) {
-    styleClass[i].style.color='blue';
-}
-for (let j=0;j<styleTag.length; j++) {
-    styleTag[j].style.color='blue';
-}
-styleId2.style.color='blue';
+// for (let i=0;i<styleClass.length; i++) {
+//     styleClass[i].style.color='blue';
+// }
+// for (let j=0;j<styleTag.length; j++) {
+//     styleTag[j].style.color='blue';
+// }
+// styleId2.style.color='blue';
 
 
 
@@ -167,6 +167,6 @@ let allElemfc_rules= document.getElementsByClassName('fc_rules');
 console.log(allElemfc_rules);
 // - поміняти колір тексту у всіх елементів fc_rules на червоний
 
-for (let k=0;k<allElemfc_rules.length; k++) {
-    allElemfc_rules[k].style.color='red';
+for (let k of allElemfc_rules) {
+    k.style.color='orange';
 }

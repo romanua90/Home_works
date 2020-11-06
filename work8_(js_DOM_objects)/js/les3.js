@@ -123,6 +123,32 @@
 // console.log(`Age of ${users[5].name} is `, users[5].age + ' and status is '+users[5].status)
 // // Приклад: вивести ім'я 1го об'єкта. Відповідь: console.log (users [0] .name). Будьте уважні! 4й об'єкт має індес 3!
 
+// -- Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
+// - отримує текст з параграфа з id "content"
+// const pText= document.getElementById("content");
+// document.write(pText.textContent);
+// // - отримує текст з блоку з id "rules"
+// document.write("</br>",document.getElementById("rules").textContent);
+// // - замініть текст параграфа з id 'content' на будь-який інший
+// document.getElementById("content").textContent="I am Roman, and I am studying JS";
+// document.write("</br>",document.getElementById("content").textContent);
+// // - замініть текст параграфа з id 'rules' на будь-який інший
+// document.getElementById("rules").textContent="I am Roman, and I am studying HTML";
+// document.write("</br>",document.getElementById("rules").textContent);
+// - змініть кожному елементу колір фону на червоний
+document.getElementById('rules').style.backgroundColor='red';
+document.getElementById('content').style.backgroundColor='red';
+let styleClass= document.getElementsByClassName("fc_rules");
+let styleTag= document.getElementsByTagName("body");
+for ( stKey=0;stKey<styleClass.length; stKey++) {
+    styleClass[stKey].style.backgroundColor='green';
+}
+for ( stKey=0;stKey<styleTag.length; stKey++) {
+    styleTag[stKey].style.backgroundColor='orange';
+}
 
+// - змініть кожному елементу колір тексту на синій
+// - отримати весь список класів елемента з id=rules і вивести їх в console.log
+// - отримати всі елементи з класом fc_rules
+// - поміняти колір тексту у всіх елементів fc_rules на червоний
 
-/

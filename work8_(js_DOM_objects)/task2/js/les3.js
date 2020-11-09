@@ -492,7 +492,7 @@ for (let i = 0; i <10 ; i++) {
 	 for (let j=0; j<5; j++){
 	 mycolumns=document.createElement("td");
 	 mycolumns.innerText='Element '+(j);
-	 mycolumns.style.border='solid 2px blue';
+	 mycolumns.style.border='solid 2px red';
 	 myrows.appendChild(mycolumns);
 	 }
 

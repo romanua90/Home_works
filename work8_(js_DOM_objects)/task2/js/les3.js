@@ -415,53 +415,71 @@ let arrOfCars2=[car1={model:'Tesla',year: 2016,power: 150, color: 'white', drive
 //
 
 // - створити розмітці блок з id, class та текстом в середені. Зчитати окремо цей текст з селекторів по id , class та тегу
-// let Block1=document.createElement('div');
-// Block1.id="block1";
-// Block1.className="blocks";
-// Block1.style.width='100px';
-// Block1.style.height='100px';
-// Block1.style.backgroundColor='blue';
-// Block1.innerText="Some text inside";
-// document.body.appendChild(Block1);
-// let tag=document.getElementsByTagName('div');
-// console.log (tag[10].textContent);
-// let clas=document.getElementsByClassName('blocks');
-// console.log(clas[0].textContent);
-// let id=document.getElementById('block1');
-// console.log(id.textContent);
+/* let divIdClass=document.createElement('div');
+ divIdClass.id='divId';
+ divIdClass.className='divClass';
+ divIdClass.innerHTML="I am Roman. I am 30 years old";
+ document.body.appendChild(divIdClass);
+let id=document.getElementById('divId');
+console.log(id.innerText);
+let clas=document.getElementsByClassName('divClass');
+console.log(clas[0].innerText);
+let tag=document.getElementsByTagName('div');
+console.log(tag[10].innerText);*/
+
+
 // // - змінити цей текст використовуючи селектори id, class,  tag
-// id.innerHTML="It is Lviv";
-// clas[length].innerHTML="But it is class";
-// tag[10].innerHTML='And it is a tag';
+//id.innerHTML="I am living in Lviv";
+//id.style.backgroundColor="red";
+//clas[0].innerHTML='Lviv is open city for the world';
+//tag[10].innerHTML=`${id.innerText} AND it is my favorite city`;
+//for (i=0; i<id)
+
 
 // - змінити висоту та ширину блоку використовуючи селектори id, class,  tag
-// id.style.width='550px';
-// id.style.height='50px';
-// clas[length].style.width='1000px';
-// clas[length].style.height='100px';
+//id.style.width='550px';
+//id.style.height='50px';
+//clas[length].style.width='1000px';
+//clas[length].style.height='100px';
 
 // - за допомоги document.createElement та appendChild створити таблицю на 1 рядок з трьома ячейками всередені
-let tablebody=document.createElement('table')
-tablebody.style.border="solid 3px red";
+/*let tablebody=document.createElement('table');
+tablerows.style.border="solid 3px red";
 tablebody.style.width='100%';
 tablerows=document.createElement("tr");
+tablecolumn=document.createElement("td");
+tablecolumn.innerText='lorem1';
+tablecolumn.style.border="solid 3px red";
+tablerows.appendChild(tablecolumn);
+tablecolumn=document.createElement("td");
+tablecolumn.innerText='lorem2';
+tablecolumn.style.border="solid 3px red";
+tablerows.appendChild(tablecolumn);
+tablecolumn=document.createElement("td");
+tablecolumn.innerText='lorem3';
+tablecolumn.style.border="solid 3px red";
+tablerows.appendChild(tablecolumn);
 tablebody.appendChild(tablerows);
-tablecolumn=document.createElement("td");
-tablecolumn.innerText='lorem1';
-tablebody.appendChild(tablecolumn);
-tablecolumn=document.createElement("td");
-tablecolumn.innerText='lorem1';
-tablebody.appendChild(tablecolumn);
-tablecolumn=document.createElement("td");
-tablecolumn.innerText='lorem1';
-tablebody.appendChild(tablecolumn);
-
+document.body.appendChild(tablebody);*/
 // - за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
-// let mytable=document.createElement('table');
-// for (let i = 0; i <10 ; i++) {
-// table
-// }
+ let mytable=document.createElement('table');
+ mytable.style.border='solid 2px blue';
+ let mycolumns;
+ let myrows;
+ for (let i = 0; i <10 ; i++) {
+	 myrows=document.createElement("tr");
+	 mytable.appendChild(myrows);
+	 for (let j=0; j<3; j++){
+	 mycolumns=document.createElement("td");
+	 mycolumns.innerText='Element '+(j);
+	 mycolumns.style.border='solid 2px blue';
+	 myrows.appendChild(mycolumns);
+	 }
 
+ }
+ document.body.appendChild(mytable);
+ 
+ 
 // - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
 // - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені. n та m отримати з prompt
 //

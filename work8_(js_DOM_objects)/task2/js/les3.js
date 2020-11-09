@@ -147,9 +147,9 @@
 //     city3={name: 'Drohobych', population: 90000, country:'Ukraine', region:'Lvivska oblast'}];
 
 // // - Создать массив объектов cars и заполнить его машинами с полями модель, год выпуска, мощность, цвет, водитель. Водитель является отдельным объектом с полями имя, возраст, пол, стаж.
-let arrOfCars2=[car1={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Roman', age:30, sex: 'm', experience: 12}},
+/*let arrOfCars2=[car1={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Roman', age:30, sex: 'm', experience: 12}},
     car2={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Misha', age:30, sex: 'm', experience: 10}},
-    car3={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Vova', age:25, sex: 'm', experience: 5}}]
+    car3={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Vova', age:25, sex: 'm', experience: 5}}]*/
 
 // - проитерировать каждый массив из задания 5,6,7 при помощи while.
 
@@ -462,25 +462,44 @@ tablerows.appendChild(tablecolumn);
 tablebody.appendChild(tablerows);
 document.body.appendChild(tablebody);*/
 // - за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
- let mytable=document.createElement('table');
- mytable.style.border='solid 2px blue';
- let mycolumns;
- let myrows;
- for (let i = 0; i <10 ; i++) {
+// let mytable=document.createElement('table');
+// mytable.style.border='solid 2px blue';
+// let mycolumns;
+// let myrows;
+// for (let i = 0; i <10 ; i++) {
+// 	 myrows=document.createElement("tr");
+// 	 mytable.appendChild(myrows);
+// 	 for (let j=0; j<3; j++){
+// 	 mycolumns=document.createElement("td");
+// 	 mycolumns.innerText='Element '+(j);
+// 	 mycolumns.style.border='solid 2px blue';
+// 	 myrows.appendChild(mycolumns);
+// 	 }
+
+// }
+// document.body.appendChild(mytable);
+ 
+ 
+// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
+
+let mytable=document.createElement('table');
+mytable.style.border='solid 2px blue';
+let mycolumns;
+let myrows;
+for (let i = 0; i <10 ; i++) {
 	 myrows=document.createElement("tr");
 	 mytable.appendChild(myrows);
-	 for (let j=0; j<3; j++){
+	 for (let j=0; j<5; j++){
 	 mycolumns=document.createElement("td");
 	 mycolumns.innerText='Element '+(j);
 	 mycolumns.style.border='solid 2px blue';
 	 myrows.appendChild(mycolumns);
 	 }
 
- }
- document.body.appendChild(mytable);
- 
- 
-// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
+}
+document.body.appendChild(mytable);
+
+
 // - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені. n та m отримати з prompt
 //
 // --Завантажити з мережі будь-який шаблон сайту. Підключити до нього свій скріпт-файл. У файлі прописати наступні доступи та дії

@@ -147,9 +147,9 @@
 //     city3={name: 'Drohobych', population: 90000, country:'Ukraine', region:'Lvivska oblast'}];
 
 // // - Создать массив объектов cars и заполнить его машинами с полями модель, год выпуска, мощность, цвет, водитель. Водитель является отдельным объектом с полями имя, возраст, пол, стаж.
-/*let arrOfCars2=[car1={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Roman', age:30, sex: 'm', experience: 12}},
+let arrOfCars2=[car1={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Roman', age:30, sex: 'm', experience: 12}},
     car2={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Misha', age:30, sex: 'm', experience: 10}},
-    car3={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Vova', age:25, sex: 'm', experience: 5}}]*/
+    car3={model:'Tesla',year: 2016,power: 150, color: 'white', driver:{name:'Vova', age:25, sex: 'm', experience: 5}}]
 
 // - проитерировать каждый массив из задания 5,6,7 при помощи while.
 
@@ -461,51 +461,81 @@ tablecolumn.style.border="solid 3px red";
 tablerows.appendChild(tablecolumn);
 tablebody.appendChild(tablerows);
 document.body.appendChild(tablebody);*/
-// - за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
+// - за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені* 
 // let mytable=document.createElement('table');
 // mytable.style.border='solid 2px blue';
 // let mycolumns;
 // let myrows;
 // for (let i = 0; i <10 ; i++) {
-// 	 myrows=document.createElement("tr");
-// 	 mytable.appendChild(myrows);
-// 	 for (let j=0; j<3; j++){
-// 	 mycolumns=document.createElement("td");
-// 	 mycolumns.innerText='Element '+(j);
-// 	 mycolumns.style.border='solid 2px blue';
-// 	 myrows.appendChild(mycolumns);
-// 	 }
+//	 myrows=document.createElement("tr");
+//	 mytable.appendChild(myrows);
+//	 for (let j=0; j<3; j++){
+//	 mycolumns=document.createElement("td");
+//	 mycolumns.innerText='Element '+(j);
+//	 mycolumns.style.border='solid 2px blue';
+//	 myrows.appendChild(mycolumns);
+//	 }
 
 // }
 // document.body.appendChild(mytable);
  
  
 // - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
+// let mytable=document.createElement('table');
+// mytable.style.border='solid 2px blue';
+// let mycolumns;
+// let myrows;
+// for (let i = 0; i <10 ; i++) {
+//	 myrows=document.createElement("tr");
+//	 mytable.appendChild(myrows);
+//	 for (let j=0; j<5; j++){
+//	 mycolumns=document.createElement("td");
+//	 mycolumns.innerText='Element '+(j+1);
+//	 mycolumns.style.border='solid 2px blue';
+//	 myrows.appendChild(mycolumns);
+//	 }
 
-let mytable=document.createElement('table');
-mytable.style.border='solid 2px blue';
-let mycolumns;
-let myrows;
-for (let i = 0; i <10 ; i++) {
+// }
+// document.body.appendChild(mytable);
+ 
+// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені. n та m отримати з prompt
+
+ /*let mytable=document.createElement('table');
+ mytable.style.border='solid 2px blue';
+ let mycolumns;
+ let myrows;
+ let n=prompt('Please enter quantity of rows of table');
+ let m=prompt('Please enter quantity of <b>columns</b> of table');
+ console.log (typeof(n));
+ console.log (typeof(m));
+ for (let i=0; i < n ; i++) {
 	 myrows=document.createElement("tr");
 	 mytable.appendChild(myrows);
-	 for (let j=0; j<5; j++){
+	 for (let j=0; j < m; j++){
 	 mycolumns=document.createElement("td");
-	 mycolumns.innerText='Element '+(j);
-	 mycolumns.style.border='solid 2px red';
+	 mycolumns.innerText='Element '+(j+1);
+	 mycolumns.style.border='solid 2px blue';
 	 myrows.appendChild(mycolumns);
 	 }
 
-}
-document.body.appendChild(mytable);
-
-
-// - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені. n та m отримати з prompt
+ }
+ document.body.appendChild(mytable); */
 //
 // --Завантажити з мережі будь-який шаблон сайту. Підключити до нього свій скріпт-файл. У файлі прописати наступні доступи та дії
 // - знайти всі елементі, які мають class
+ /*let allClassEl=document.querySelectorAll('[class]');
+ console.log (allClassEl);
 // - знайти всі параграфи ,та змінити текст на hello oktenweb!
+ let allP=document.getElementsByTagName('p');
+ for ( i of allP ){
+ i.innerText="hello oktenweb!";
+ }*/
 //     - знайти всі div та змінити ім колір на червоний
+ let allDiv=document.getElementsByTagName('div');
+ for ( i of allDiv ){
+ i.style.color="red";
+ }
+
 //
 // ============
 // ====class===

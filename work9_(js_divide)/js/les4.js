@@ -1,11 +1,53 @@
 //- створити функцію яка виводить масив
-let arrOfSybmols=['string', 34,6789578, BigInt(2323423423429857242576957), -5.6, 90, 100, 'It is over'];
+let arrofSymbols=['string', 34,6789578, BigInt(2323423423429857242576957), -5.6, 90, 100, 'It is over'];
+let arrofNumbers=[30, 34,78, 2323, -5, 90, 100, 10];
+let arrofNumbers2=[30, 20,70, 2323, -55, 30, 30, 100];
+
+let rules = [
+	{
+		title: 'Первое правило Бойцовского клуба.',
+		body: 'Никому не рассказывать о Бойцовском клубе.'
+	},
+	{
+		title: 'Второе правило Бойцовского клуба.',
+		body: 'Никогда никому не рассказывать о Бойцовском клубе.'
+	},
+	{
+		title: 'Третье правило Бойцовского клуба.',
+		body: 'В схватке участвуют только двое.'
+	},
+	{
+		title: 'Четвертое правило Бойцовского клуба.',
+		body: 'Не более одного поединка за один раз.'
+	},
+	{
+		title: 'Пятое правило Бойцовского клуба.',
+		body: 'Бойцы сражаются без обуви и голые по пояс.'
+	},
+	{
+		title: 'Шестое правило Бойцовского клуба.',
+		body: 'Поединок продолжается столько, сколько потребуется.'
+	},
+	{
+		title: 'Шестое правило Бойцовского клуба.',
+		body: 'Поединок продолжается столько, сколько потребуется.'
+	},
+	{
+		title: 'Шестое правило Бойцовского клуба.',
+		body: 'Поединок продолжается столько, сколько потребуется.'
+	},
+	{
+		title: 'Шестое правило Бойцовского клуба.',
+		body: 'Поединок продолжается столько, сколько потребуется.'
+	},
+];
+
 function arrOutput (arr) {
 	console.log('Output of array is:');
 	for (i of arr)
 	console.log(i);
 }
-//arrOutput(arrOfSybmols);
+//arrOutput(arrofSymbols)
 
 //- створити функцію яка заповнює масив рандомними числами та виводить його. Для виведення використати попвередню функцію.*/
 let EmptyArr=[];
@@ -20,22 +62,154 @@ function arrRand (arr){
 //arrRand (EmptyArr);
 
 //- створити функцію яка приймає три числа та виводить та повертає найменьше.
-function (a,b,c){
-	if (a<b&& a<c){
-		console.log (`The smallest number is: ${a}`);
-	} else if () {
-	
-}
+function smallestNumber(a,b,c) {
+	if (a < b && a < c) {
+		console.log(`The smallest number is: ${a}`);
+		return a;
+	} else if (b < a && b < c) {
+		console.log(`The smallest number is: ${b}`);
+		return b;
+	}
+	else if (c < a && c < b) {
+		console.log(`The smallest number is: ${c}`);
+		return c;
+		}
+	}
+// 	let small =smallestNumber(23,-2.43,-3.43134);
+// console.log(small);
+
 //- створити функцію яка приймає три числа та виводить та повертає найбільше.
+function biggestNumber(a,b,c) {
+	if (a > b && a > c) {
+		console.log(`The biggest number is: ${a}`);
+		return a;
+	} else if (b > a && b > c) {
+		console.log(`The biggest number is: ${b}`);
+		return b;
+	}
+	else if (c > a && c > b) {
+		console.log(`The biggest number is: ${c}`);
+		return c;
+	}
+}
+// let big=biggestNumber(BigInt(231124132472394632874632426846),4.53,324324324234);
+// console.log(big);
+
+
+
 //- створити функцію яка приймає будь//-яку кількість чисел, повертає найменьше, а виводить найбільше
+function smallBigNumber (arrOfNum){
+	let max=0;
+	let min=0;
+	for (let i=0; i<arrOfNum.length; i++) {
+		if(arrOfNum[i]>max){
+			max=arrOfNum[i];
+		} else if (arrOfNum[i]<min){
+			min=arrOfNum[i];
+		}
+	}
+	console.log(`Biggest value is ${max}`);
+	return min;
+	}
+// let smalbig=smallBigNumber([1,2,3,4,5,3,-4,435234,34,32,-102,-1212, 2342]);
+// console.log(smalbig);
+
 //- створити функцію яка виводить масив
+
+arrOfString=[true,false, 'Roman is student', 'Lviv is the best city', 'a', 'true', 'weweewe'];
+// arrOutput(arrOfString);
+
 //- створити функцію яка повертає найбільше число з масиву
+
+function biggestOfArr(arrOfNum){
+	let max=0;
+	let min=0;
+	for (let i=0; i<arrOfNum.length; i++) {
+		if(arrOfNum[i]>max){
+			max=arrOfNum[i];
+		} else if (arrOfNum[i]<min){
+			min=arrOfNum[i];
+		}
+	}
+		return max;
+}
+// let biggestofArr=biggestOfArr(arrofSymbols)
+// console.log(biggestofArr);
 //- створити функцію яка повертає найменьше число з масиву
+function smallestOfArr(arrOfNum){
+	let max=0;
+	let min=0;
+	for (let i=0; i<arrOfNum.length; i++) {
+		if(arrOfNum[i]>max){
+			max=arrOfNum[i];
+		} else if (arrOfNum[i]<min){
+			min=arrOfNum[i];
+		}
+	}
+	return min;
+}
+// let smallestofArr=smallestOfArr(arrofSymbols)
+// console.log(smallestofArr);
 //- створити функцію яка приймає масив чисел та складає значення елементів масиву та повертає його.
+function SumOfArr(arr){
+	let sum=0;
+	for (const elem of arr) {
+	sum=sum+elem;
+	}
+	return sum;
+}
+// let sumArr=SumOfArr(arrofNumbers);
+// console.log(sumArr);
 //- створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
+
+function AvgOfArr(arr){
+	let avg=0;
+	let sum=0;
+	for (const elem of arr) {
+		sum=sum+elem;
+	}
+	avg=sum/arr.length;
+	return avg;
+}
+ // let avgArr=AvgOfArr(arrofNumbers);
+ // console.log(avgArr);
+
+
 //- Створити функцію яка приймає масив будь яких объектів, та повертає значення кількості об'єктів в масиві
+
+function objSize (obj){
+	return obj.length
+}
+// let objsize=objSize(rules);
+// console.log(objsize);
+
 //- Створити функцію яка приймає масив будь яких объектів, та повертає загальн кількість полів в них
+
+function objSizeOfFields (arrOfObj){
+	let sumOfFilelds=0;
+	for (const count of arrOfObj) {
+		sumOfFilelds=sumOfFilelds+Object.keys (count).length;
+	}
+	return sumOfFilelds;
+}
+// let sizeFields=objSizeOfFields(rules);
+// console.log(sizeFields);
+
+
 //- створити функцію  яка скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
+
+function SumOf2Arr(arr1, arr2){
+	let arr3=[];
+	for (const elem in arr1) {
+		arr3[elem]=arr1[elem]+arr2[elem];
+	}
+	console.log(arr1);
+	console.log(arr2);
+	return arr3;
+}
+let sum2Arr=SumOf2Arr(arrofNumbers, arrofNumbers2);
+console.log(sum2Arr);
+
 //  Приклад
 // [1,2,3,4]
 //  [2,3,4,5]

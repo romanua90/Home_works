@@ -1,7 +1,12 @@
 //- створити функцію яка виводить масив
 let arrofSymbols=['string', 34,6789578, BigInt(2323423423429857242576957), -5.6, 90, 100, 'It is over'];
 let arrofNumbers=[30, 34,78, 2323, -5, 90, 100, 10];
-let arrofNumbers2=[30, 20,70, 2323, -55, 30, 30, 100];
+let arrofNumbers2=[30, 20,0, 2323, -55, 0, 30, 100];
+let arrOfAuto=[{name:'tesla', year:2020},
+{name:'VW', year:2010},
+{name:'opel', year:2017},
+{name:'volvo', year:2013},
+{name:'mazda', year:2015}];
 
 let rules = [
 	{
@@ -32,14 +37,6 @@ let rules = [
 		title: 'Шестое правило Бойцовского клуба.',
 		body: 'Поединок продолжается столько, сколько потребуется.'
 	},
-	{
-		title: 'Шестое правило Бойцовского клуба.',
-		body: 'Поединок продолжается столько, сколько потребуется.'
-	},
-	{
-		title: 'Шестое правило Бойцовского клуба.',
-		body: 'Поединок продолжается столько, сколько потребуется.'
-	},
 ];
 
 function arrOutput (arr) {
@@ -54,10 +51,11 @@ let EmptyArr=[];
 function arrRand (arr){
 	let min = prompt('Please enter min value of range');
 	let max = prompt('Please enter max value of range');
-	for (i=0; i<20; i++) {
+	for (i=0; i<100; i++) {
 	EmptyArr[i]=Math.round(Math.random()*(max-min)+min);
 	}
 	arrOutput(EmptyArr);
+	return EmptyArr;
 }
 //arrRand (EmptyArr);
 
@@ -207,17 +205,43 @@ function SumOf2Arr(arr1, arr2){
 	console.log(arr2);
 	return arr3;
 }
-let sum2Arr=SumOf2Arr(arrofNumbers, arrofNumbers2);
-console.log(sum2Arr);
+//let sum2Arr=SumOf2Arr(arrofNumbers, arrofNumbers2);
+//console.log(sum2Arr);
 
 //  Приклад
 // [1,2,3,4]
 //  [2,3,4,5]
 //  результат
 //  [3,5,7,9]
+
+
+
 //- *** приймає масив та число "i", та міняє місцями об`єкт який знаходиться в індексі "i" на "i+1"
+function objExchange (arrOfObj, i){
+	let exchanger=arrOfObj[i];
+	arrOfObj[i]=arrOfObj[i+1];
+	arrOfObj[i+1]=exchanger;
+	
+	return arrOfObj;
+}
+// let arrofobj=objExchange(rules, 1);
+// console.log(arrofobj);
+
 //- *** створити функцію яка буде переносити елементи з значенням 0 у кінець маисву. Зберігаючи при цьому порядок не нульових значень.
 //Двожина масиву від 2 до 100
+
+function arr0exchange (arrOfObj){
+	for (i=0;i<arrOfObj.length; i++){
+		if(arrOfObj[i]==0){
+		arrOfObj.push(arrOfObj[i]);
+		arrOfObj.splice(i, 1);
+		
+		}
+		}
+return arrOfObj;
+}
+//let res=arr0exchange(arrRand());
+//console.log(res);
 //Приклад
 //[1,0,6,0,3] => [1,6,3,0,0]
 //[0,1,2,3,4] => [1,2,3,4,0]
@@ -225,12 +249,43 @@ console.log(sum2Arr);
 
 //Створити функцію яка :
 //- Додає в боді блок з текстом "Hello owu"
+function addDiv (){
+	let div=document.createElement('div');
+	div.innerHTML="Hello owu";
+	document.body.appendChild(div);
+}
+//addDiv();
+
+
 //- Додає в боді елемент з текстом . Тип елементу та текст отримати через аргументи
+function addDivMod (elem,string){
+	let div=document.createElement(elem);
+	div.innerHTML=string;
+	document.body.appendChild(div);
+}
+//addDivMod('h1',arrofSymbols);
 //- приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 //Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
+
+function autoArr (arrauto, index){
+	for (let j; j<arrauto.length; j++){
+   let idElement=document.createElement(index);
+   idElement.id="auto";
+   idElement.innerHTML=arrauto[j][0];
+   idElement.innerHTML=arrauto[j][1];
+  let divAuto=document.createElement('div');
+   divAuto.appendChild(idElement);
+   document.body.appendChild(divAuto);
+      }
+}
+   
+autoArr(arrOfAuto, 'p');
+
+
 //- приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 //Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
 //Для кожної властивості створити всередені блока автомоблія свій блок
+
 
 //(на основі минулого ДЗ)
 //**//- функція приймає 2 масиви з рівною кількістю об'єктів та з'єднює в один об'єкт користувача та місто з відповідними "id" та "user_id",
@@ -298,6 +353,7 @@ console.log(sum2Arr);
 //3) Flat
 //Вирівняти багаторівневий масив в однорівневий
 // [1,3, ['Hello, 'Wordd', [9,6,1]], ['oops'], 9] -> [1, 3, 'Hello, 'Wordd', 9, 6, 1, 'oops', 9]
+
 
 
 

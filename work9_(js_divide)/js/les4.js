@@ -312,12 +312,13 @@ function autoArr (arrauto, index){
 //**//- функція приймає 2 масиви з рівною кількістю об'єктів та з'єднює в один об'єкт користувача та місто з відповідними "id" та "user_id",
 //та повертає масив цих з'єднаних об'єктів.
 
-            let usersWithId = [{id: 1, name: 'vasya', age: 31, status: false}, {id: 2, name: 'petya', age: 30, status: true}, {id: 3, name: 'kolya', age: 29, status: true}, {id: 4, name: 'olya', age: 28, status: false},];
-            let citiesWithId = [{user_id: 3, country: 'USA', city: 'Portland'}, {user_id: 1, country: 'Ukraine', city: 'Ternopil'}, {user_id: 2, country: 'Poland', city: 'Krakow'}, {user_id: 4, country: 'USA', city: 'Miami'},];
+            let usersWithId = [{id: 1, name: 'vasya', age: 31, status: false}, {id: 2, name: 'petya', age: 30, status: true}, {id: 3, name: 'kolya', age: 29, status: true}, {id: 4, name: 'olya', age: 28, status: false}];
+            let citiesWithId = [{user_id: 3, country: 'USA', city: 'Portland'}, {user_id: 1, country: 'Ukraine', city: 'Ternopil'}, {user_id: 2, country: 'Poland', city: 'Krakow'}, {user_id: 4, country: 'USA', city: 'Miami'}];
 
 
 //Частковий приклад реультату:
 function ArrConcat (arr1, arr2){
+	let arr3=[];
 	for (const Key of arr1) {
         for (const Key1 of arr2) {
                if (Key.id === Key1.user_id) {
@@ -325,12 +326,12 @@ function ArrConcat (arr1, arr2){
                }
 
               }
-        arr1.push(Key);
+        arr3.push(Key);
         }
-return arr1
+return arr3;
 }
-let arr3=ArrConcat(usersWithId,citiesWithId);
-console.log(arr3);
+//console.log (ArrConcat(usersWithId,citiesWithId));
+
 
 //***//- беремо завдання з правилами з укроку №3 :
 //Та робимо це функцією.При цьому правила отримувати через аргумент.
@@ -338,7 +339,10 @@ console.log(arr3);
 //При цому в блоці, номер правила записати в свій блок, текст правила записати в свій окремий блок.
 //Результатом відпрацювання скріпта повинна бути структура яка міститься в блоці wrap файла rule.html
 
-	/*		let rules = [
+
+
+
+	let rules1 = [
 				{
 					title: 'Первое правило Бойцовского клуба.',
 					body: 'Никому не рассказывать о Бойцовском клубе.'
@@ -373,10 +377,26 @@ console.log(arr3);
 				},
 
 			];
-"*/
 
 
+function RulesHTML (arrOfRules){
+const divWrap=document.createElement("div");
+divWrap.id='wrap';
+for (let i=0; i<arrOfRules.length; i++) {
+    let divClass=document.createElement('div')
+    divClass.className=`rules rule${i+1}`;
+    const h2=document.createElement('h2');
+    h2.innerText=arrOfRules[i].title;
+    const p=document.createElement("p");
+    p.innerText=arrOfRules[i].body;
+    divClass.appendChild(h2);
+    divClass.appendChild(p);
+    divWrap.appendChild(divClass);
+}
+document.body.appendChild(divWrap);
+}
 
+// RulesHTML (rules1);
 
 
 
@@ -397,6 +417,18 @@ console.log(arr3);
 //Выведите слово YES, если число N является точной степенью двойки,
 //или слово NO в противном случае.
 //Операцией возведения в степень пользоваться нельзя!
+
+function exponent (){
+	let N=prompt('Please enter natural value N:');
+	if (N&(N-1)){
+		console.log('NO');
+	}
+	else{
+		console.log ('YES');
+	}
+}
+//exponent ();
+
 
 //2) Deep Copy
 //реалізувати глибоке копіювання обєкту за допомогою рекурсій

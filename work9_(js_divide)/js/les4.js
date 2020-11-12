@@ -268,34 +268,69 @@ function addDivMod (elem,string){
 //Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали. Всі властивості авто в обному блоці
 
 function autoArr (arrauto, index){
-	for (let j; j<arrauto.length; j++){
-   let idElement=document.createElement(index);
-   idElement.id="auto";
-   idElement.innerHTML=arrauto[j][0];
-   idElement.innerHTML=arrauto[j][1];
-  let divAuto=document.createElement('div');
-   divAuto.appendChild(idElement);
-   document.body.appendChild(divAuto);
-      }
+	for (let j=0; j<arrauto.length; j++) {
+		let idElement = document.createElement(index);
+		let divAuto = document.createElement('div');
+		divAuto.className=`auto properties ${j + 1}`;
+		idElement.id = `auto ${j + 1}`;
+		divAuto.innerHTML = Object.values(arrauto[j]);
+		idElement.appendChild(divAuto);
+		document.body.appendChild(idElement);
+	}
 }
    
-autoArr(arrOfAuto, 'p');
+// autoArr(arrOfAuto, 'h3');
 
 
 //- приймає масив автомобілів (можна взяти з попередніх дз ),та  індентифікатор елемнту в який потрібно додати список цих автомобілів.
 //Для кожного автомобіля створити свій блок, та додати його в елемент, індентифікатор якого ви отримали.
 //Для кожної властивості створити всередені блока автомоблія свій блок
 
+function autoArr (arrauto, index){
+	for (let j=0; j<arrauto.length; j++) {
+		let idElement = document.createElement(index);
+		let divAuto = document.createElement('div');
+		divAuto.className=`auto ${j + 1}`;
+		let divAuto1 = document.createElement('div');
+		divAuto.className=`auto ${j + 1}`;
+		divAuto1.className=`auto properties ${j + 1}`;
+		let divAuto2 = document.createElement('div');
+		divAuto2.className=`auto properties ${j + 1}`;
+		idElement.id = `auto ${j + 1}`;
+		divAuto1.innerHTML =arrauto[j].name;
+		divAuto2.innerHTML =arrauto[j].year;
+		divAuto.appendChild(divAuto1);
+		divAuto.appendChild(divAuto2);
+		idElement.appendChild(divAuto);
+		document.body.appendChild(idElement);
+	}
+}
+
+// autoArr(arrOfAuto, 'p');
 
 //(на основі минулого ДЗ)
 //**//- функція приймає 2 масиви з рівною кількістю об'єктів та з'єднює в один об'єкт користувача та місто з відповідними "id" та "user_id",
 //та повертає масив цих з'єднаних об'єктів.
-//Приклад масивів:
-            //let usersWithId = [{id: 1, name: 'vasya', age: 31, status: false}, {id: 2, name: 'petya', age: 30, status: true}, {id: 3, name: 'kolya', age: 29, status: true}, {id: 4, name: 'olya', age: 28, status: false},];
-            //let citiesWithId = [{user_id: 3, country: 'USA', city: 'Portland'}, {user_id: 1, country: 'Ukraine', city: 'Ternopil'}, {user_id: 2, country: 'Poland', city: 'Krakow'}, {user_id: 4, country: 'USA', city: 'Miami'},];
+
+            let usersWithId = [{id: 1, name: 'vasya', age: 31, status: false}, {id: 2, name: 'petya', age: 30, status: true}, {id: 3, name: 'kolya', age: 29, status: true}, {id: 4, name: 'olya', age: 28, status: false},];
+            let citiesWithId = [{user_id: 3, country: 'USA', city: 'Portland'}, {user_id: 1, country: 'Ukraine', city: 'Ternopil'}, {user_id: 2, country: 'Poland', city: 'Krakow'}, {user_id: 4, country: 'USA', city: 'Miami'},];
+
+
 //Частковий приклад реультату:
+function ArrConcat (arr1, arr2){
+	for (const Key of arr1) {
+        for (const Key1 of arr2) {
+               if (Key.id === Key1.user_id) {
+                   Key.adress = Key1;
+               }
 
-
+              }
+        arr1.push(Key);
+        }
+return arr1
+}
+let arr3=ArrConcat(usersWithId,citiesWithId);
+console.log(arr3);
 
 //***//- беремо завдання з правилами з укроку №3 :
 //Та робимо це функцією.При цьому правила отримувати через аргумент.
@@ -339,6 +374,22 @@ autoArr(arrOfAuto, 'p');
 
 			];
 "*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //===========додаткове від віктора========
 //1) Точная степень двойки.

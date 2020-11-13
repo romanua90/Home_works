@@ -201,7 +201,7 @@ class Car2 {
     addDriver= (driver) => {Car.driver=driver};
 }
 
-console.log(Passat= new Car2('B8',"VW",2019,320,2.8));
+//console.log(Passat= new Car2('B8',"VW",2019,320,2.8));
 // ==============================================
 //     -створити класс попелюшка з полями ім'я, вік, розмір ноги
 // --Створити 10 попелюшок , покласти їх в масив
@@ -209,11 +209,88 @@ console.log(Passat= new Car2('B8',"VW",2019,320,2.8));
 // -- за допоиоги циклу знайти яка попелюшка повинна бути з принцом
 // ==============================================
 //
-//
-//
+class Cinderela{
+constructor(name, age, size){
+	this.name= name;
+	this.age= age;
+	this.footsize= size;
+}
+}
+let arrOfCinderela=[];
+arrOfCinderela[0]=new Cinderela('Anna', 18, 35);
+arrOfCinderela[1]=new Cinderela('Alina', 19, 32);
+arrOfCinderela[2]=new Cinderela('Halyna', 20, 39);
+arrOfCinderela[3]=new Cinderela('Ira', 17, 34);
+arrOfCinderela[4]=new Cinderela('Oxana', 23, 33);
+arrOfCinderela[5]=new Cinderela('Tanya', 22, 38);
+arrOfCinderela[6]=new Cinderela('Karina', 19, 37);
+arrOfCinderela[7]=new Cinderela('Solomiia', 25, 34);
+arrOfCinderela[8]=new Cinderela('Nadiia', 18, 36);
+arrOfCinderela[9]=new Cinderela('Tamila', 16, 34);
+
+//console.log(arrOfCinderela);
+
+
+class Prince{
+constructor(name, age, shoes, arr){
+	this.name= name;
+	this.age= age;
+	this.shoes= shoes;
+}
+findCinderela (arr) { 
+for (let i of arr){
+	if (this.shoes == i.footsize){
+		console.log (`${i.name} should be with Prince`)
+		return;
+		}
+		}
+};
+}
+//let prince= new Prince ('Ernest', 23, 34, arrOfCinderela);
+//console.log  (prince);
+//prince.findCinderela(arrOfCinderela);
+
+
+
+
 // ==============================================
 //     -створити функцію конструктор попелюшка з полями ім'я, вік, розмір ноги
 // --Створити 10 попелюшок , покласти їх в масив
 // --Сторити об'єкт типу "принц" за допомоги функції конструктора з полями ім'я, вік, туфелька яку він знайшов, та функцію "пошук попелюшки"
 // -- функція повинна приймати масив попелюшок, та шукає ту котра йому підходить
 // ==============================================
+function Cinderela2 (name, age, size){
+	this.name= name;
+	this.age= age;
+	this.footsize= size;
+}
+let arrOfCinderela2=[];
+arrOfCinderela2[0]=new Cinderela('Anna', 18, 35);
+arrOfCinderela2[1]=new Cinderela('Alina', 19, 32);
+arrOfCinderela2[2]=new Cinderela('Halyna', 20, 39);
+arrOfCinderela2[3]=new Cinderela('Ira', 17, 34);
+arrOfCinderela2[4]=new Cinderela('Oxana', 23, 33);
+arrOfCinderela2[5]=new Cinderela('Tanya', 22, 38);
+arrOfCinderela2[6]=new Cinderela('Karina', 19, 37);
+arrOfCinderela2[7]=new Cinderela('Solomiia', 25, 34);
+arrOfCinderela2[8]=new Cinderela('Nadiia', 18, 36);
+arrOfCinderela2[9]=new Cinderela('Tamila', 16, 34);
+
+
+function Prince2(name, age, shoes, arr){
+	this.name= name;
+	this.age= age;
+	this.shoes= shoes;
+	this.findCinderela= (arr) => { 
+	for (let i of arr){ 
+	if (this.shoes == i.footsize){
+		console.log (`${i.name} should be with Prince`)
+		return;
+		}
+		}
+	}
+};
+
+let prince2= new Prince2 ('August', 25, 36, arrOfCinderela2);
+console.log  (prince2);
+prince2.findCinderela(arrOfCinderela2);

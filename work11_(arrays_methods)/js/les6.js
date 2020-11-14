@@ -1,28 +1,127 @@
 //  создать массив с 20 числами.
+let arrOfNum=[1,-45,3,456,2,0,-9,34,9.6,-0.78,4,69,190,45,67,52,35,6,89,490];
 // -- при помощи метода sort и колбека  отсортировать массив.
+// let Up= arrOfNum.sort((a, b) => {return a-b});
+// console.log(Up);
+
 // -- при помощи метода sort и колбека отсортировать массив в ниспадающем напралении.
+
+// let Down=arrOfNum.sort((a, b) => {return b-a});
+// console.log(Down);
 // -- при помощи filter получить числа кратные 3
+// console.log(arrOfNum.filter(value => value%3==0 ));
 // -- при помощи filter получить числа кратные 10
+// console.log(arrOfNum.filter(value => value%10==0));
 // -- перебрать (проитерировать) массив при помощи foreach()
+// arrOfNum.forEach(value => console.log(value));
 // -- перебрать массив при помощи map() и получить новый массив в котором все значения будут в 3 раза больше
+let map= arrOfNum.map((value, index)  => {
+      return Math.round(value*3);
+});
+// console.log(map);
+
 //
 // - создать массив со словами на 15-20 элементов.
+let arrOfString=['Roman','12','Nadiia','Ukraine','Lviv', 'Mazda','1', 'VW', 'true', 'false','Boolean', 'right', 'left', 'center', 'Poland',
+'Europe', 'USA', 'IT', 'Jun', 'payment is very high'];
 // -- отсортировать его по алфавиту в восходящем порядке.
+let SortedUPstring=JSON.parse(JSON.stringify(arrOfString));
+SortedUPstring.sort(function (a,b){return a.toLowerCase()>b.toLocaleLowerCase() });
+// console.log(arrOfString);
+// console.log(SortedUPstring);
+// let SortedUPstring = arrOfString.sort((a,b)=>{return a>b });
+// console.log(SortedUPstring);
 // -- отсортировать его по алфавиту  в нисходящем порядке.
+// let SortedDOWNstring = arrOfString.sort((a,b)=>{return a<b });
+// console.log(SortedDOWNstring);
+
 // -- отфильтровать слова длиной менее 4х символов
+let FilteredString=arrOfString.filter(a=> {
+    if (a.length<4) return a;})
+// console.log(FilteredString);
+
 // -- перебрать массив при помощи map() и получить новый массив в котором все значения будут со знаком "!" в конце
+let MapedString=arrOfString.map((value) => {return  (value=value+'!');})
+// console.log(MapedString);
 //
 // Все робити через функції масивів (foreach, map ...тд)
 // Дан масив :
-// let users = [ {name: 'vasya', age: 31, status: false}, {name: 'petya', age: 30, status: true}, {name: 'kolya', age: 29, status: true}, {name: 'olya', age: 28, status: false}, {name: 'max', age: 30, status: true}, {name: 'anya', age: 31, status: false}, {name: 'oleg', age: 28, status: false}, {name: 'andrey', age: 29, status: true}, {name: 'masha', age: 30, status: true}, {name: 'olya', age: 31, status: false}, {name: 'max', age: 31, status: true} ];
+let users = [ {name: 'vasya', age: 31, status: false}, {name: 'petya', age: 30, status: true}, {name: 'kolya', age: 29, status: true}, {name: 'olya', age: 28, status: false}, {name: 'max', age: 30, status: true}, {name: 'anya', age: 31, status: false}, {name: 'oleg', age: 28, status: false}, {name: 'andrey', age: 29, status: true}, {name: 'masha', age: 30, status: true}, {name: 'olya', age: 31, status: false}, {name: 'max', age: 31, status: true} ];
 // - відсортувати його за  віком (зростання , а потім окремо спадання)
+// let SortedObj=users.sort((a,b)=>a.age-b.age);
+// console.log(SortedObj);
+//
+// let SortedObj1=users.sort((a,b)=>b.age-a.age);
+// console.log(SortedObj1);
 // - відсортувати його за кількістю знаків в імені  (зростання , а потім окремо спадання)
+// let SortedbyName= users.sort((value1, value2) => value1.name.length-value2.name.length)
+// console.log(SortedbyName);
+// let SortedbyName1= users.sort((value1, value2) => value2.name.length-value1.name.length)
+// console.log(SortedbyName1);
 // - пройтись по ньому та додати кожному юзеру поле id - яке характеризує унікальний індентифікатор (По якому принципу його створювати - ваше рішення), та зберегти це в новий масив (первинний масив залишиться без змін)
+let AddedId=JSON.parse(JSON.stringify(users));
+AddedId.map((value,index) => {
+    value.id=Math.floor(Math.random()*100*index);
+    return value;
+});
+// console.log(users)
+// console.log(AddedId);
 // - відсортувати його за індентифікатором
 //
+AddedId.sort((a,b)=>a.id-b.id);
+// console.log(AddedId);
 //
 // -- наисать функцию калькулятора с 2мя числами и колбеком
+function calculator2(a, b, callback) {
+    return callback();
+}
+    let result= calculator2(1,2,(a,b)=> {
+        a=+(prompt('Enter 1.value:'));
+        b=+(prompt('Enter 2.value:'));
+        c=prompt('Enter operation');
+        if(c=="+"){
+            return a+b;
+        }
+        else if(c=='-'){
+            return a-b;
+        }
+        else if(c=='*') {
+            return a * b;
+        }
+        else if(c=='/'){
+            return a/b;
+        }
+
+    });
+alert(`Result is ${result}`);
 // -- наисать функцию калькулятора с 3мя числами и колбеком
+
+
+function calculator3(aa, bb, cc, callback) {
+    return callback(aa, bb,cc);
+}
+let result1= calculator3(1,2,3,(aa,bb,cc)=> {
+    aa=+(prompt('Enter 1.value:'));
+    bb=+(prompt('Enter 2.value:'));
+    cc=+(prompt('Enter 3.value:'));
+    dd=prompt('Enter operation');
+    if(dd=="+"){
+        return aa+bb+cc;
+    }
+    else if(dd=='-'){
+        return aa-bb-cc;
+    }
+    else if(dd=='*') {
+        return aa * bb *cc;
+    }
+    else if(dd=='/'){
+        return aa/bb/cc;
+    }
+
+})
+alert(`Result is ${result1}`)
+
+
 //
 // =============================================
 // =============================================
@@ -50,8 +149,9 @@
 //
 //
 //
-// - взять слдующий массив
-// let usersWithAddress = [{id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}}, {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 1}}, {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}}, {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 90}}, {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}}, {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 2}}, {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 22}}, {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}}, {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 12}}, {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}}, {id: 11, name: 'max', age: 31, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}}];
+let usersWithAddress = [{id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}}, {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 1}}, {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}}, {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 90}}, {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}}, {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 2}}, {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 22}}, {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}}, {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 12}}, {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}}, {id: 11, name: 'max', age: 31, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}}];
+
+
 // -- отсортировать его по id пользователей
 // -- отсортировать его по id пользователей в обратном опрядке
 // -- отсортировать его по возрасту пользователей

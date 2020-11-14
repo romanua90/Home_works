@@ -72,54 +72,54 @@ AddedId.sort((a,b)=>a.id-b.id);
 // console.log(AddedId);
 //
 // -- наисать функцию калькулятора с 2мя числами и колбеком
-function calculator2(a, b, callback) {
-    return callback();
-}
-    let result= calculator2(1,2,(a,b)=> {
-        a=+(prompt('Enter 1.value:'));
-        b=+(prompt('Enter 2.value:'));
-        c=prompt('Enter operation');
-        if(c=="+"){
-            return a+b;
-        }
-        else if(c=='-'){
-            return a-b;
-        }
-        else if(c=='*') {
-            return a * b;
-        }
-        else if(c=='/'){
-            return a/b;
-        }
-
-    });
-alert(`Result is ${result}`);
+// function calculator2(a, b, callback) {
+//     return callback();
+// }
+//     let result= calculator2(1,2,(a,b)=> {
+//         a=+(prompt('Enter 1.value:'));
+//         b=+(prompt('Enter 2.value:'));
+//         c=prompt('Enter operation');
+//         if(c=="+"){
+//             return a+b;
+//         }
+//         else if(c=='-'){
+//             return a-b;
+//         }
+//         else if(c=='*') {
+//             return a * b;
+//         }
+//         else if(c=='/'){
+//             return a/b;
+//         }
+//
+//     });
+// alert(`Result is ${result}`);
 // -- наисать функцию калькулятора с 3мя числами и колбеком
 
 
-function calculator3(aa, bb, cc, callback) {
-    return callback(aa, bb,cc);
-}
-let result1= calculator3(1,2,3,(aa,bb,cc)=> {
-    aa=+(prompt('Enter 1.value:'));
-    bb=+(prompt('Enter 2.value:'));
-    cc=+(prompt('Enter 3.value:'));
-    dd=prompt('Enter operation');
-    if(dd=="+"){
-        return aa+bb+cc;
-    }
-    else if(dd=='-'){
-        return aa-bb-cc;
-    }
-    else if(dd=='*') {
-        return aa * bb *cc;
-    }
-    else if(dd=='/'){
-        return aa/bb/cc;
-    }
-
-})
-alert(`Result is ${result1}`)
+// function calculator3(aa, bb, cc, callback) {
+//     return callback(aa, bb,cc);
+// }
+// let result1= calculator3(1,2,3,(aa,bb,cc)=> {
+//     aa=+(prompt('Enter 1.value:'));
+//     bb=+(prompt('Enter 2.value:'));
+//     cc=+(prompt('Enter 3.value:'));
+//     dd=prompt('Enter operation');
+//     if(dd=="+"){
+//         return aa+bb+cc;
+//     }
+//     else if(dd=='-'){
+//         return aa-bb-cc;
+//     }
+//     else if(dd=='*') {
+//         return aa * bb *cc;
+//     }
+//     else if(dd=='/'){
+//         return aa/bb/cc;
+//     }
+//
+// })
+// alert(`Result is ${result1}`)
 
 
 //
@@ -132,38 +132,203 @@ alert(`Result is ${result1}`)
 //
 //
 //
-// let cars = [ {producer:"subaru",model: "wrx",year: 2010, color:"blue",type: "sedan",engine: "ej204x",volume: 2,power: 400}, {producer:"subaru",model: "legacy",year: 2007, color:"silver",type: "sedan",engine: "ez30",volume: 3,power: 250}, {producer:"subaru",model: "tribeca",year: 2011, color:"white",type: "jeep",engine: "ej20",volume: 2,power: 300}, {producer:"subaru",model: "leone",year: 1998, color:"yellow",type: "sedan",engine: "ez20x",volume: 2,power: 140}, {producer:"subaru",model: "impreza",year: 2014, color:"red",type: "sedan",engine: "ej204x",volume: 2,power: 200}, {producer:"subaru",model: "outback",year: 2014, color:"red",type: "hachback",engine: "ej204",volume: 2,power: 165}, {producer:"bmw",model: "115",year: 2013, color:"red",type: "hachback",engine: "f15",volume: 1.5,power: 120}, {producer:"bmw",model: "315",year: 2010, color:"white",type: "sedan",engine: "f15",volume: 1.5, power: 120}, {producer:"bmw",model: "650",year: 2009, color:"black",type: "coupe",engine: "f60",volume: 6,power: 350}, {producer:"bmw",model: "320",year: 2012, color:"red",type: "sedan",engine: "f20",volume: 2,power: 180}, {producer:"mercedes",model: "e200",year: 1990, color:"silver",type: "sedan",engine: "eng200",volume: 2,power: 180}, {producer:"mercedes",model: "e63",year 2017, color:"yellow",type: "sedan",engine: "amg63",volume:3,power: 400}, {producer:"mercedes",model: "c250",year: 2017, color:"red",type: "sedan",engine: "eng25",volume: 2.5,power: 230} ];
+let cars = [ {producer:"subaru",
+    model: "wrx",
+    year: 2010,
+    color:"blue",
+    type: "sedan",
+    engine: "ej204x",
+    volume: 2,
+    power: 400},
+    {producer:"subaru",
+        model: "legacy",
+        year: 2007,
+        color:"silver",
+        type: "sedan",
+        engine: "ez30",
+        volume: 3,
+        power: 250},
+    {producer:"subaru",
+        model: "tribeca",
+        year: 2011,
+        color:"white",
+        type: "jeep",
+        engine: "ej20",
+        volume: 2,
+        power: 300},
+    {producer:"subaru",
+        model: "leone",
+        year: 1998,
+        color:"yellow",
+        type: "sedan",
+        engine: "ez20x",
+        volume: 2,
+        power: 140},
+    {producer:"subaru",
+        model: "impreza",
+        year: 2014,
+        color:"red",
+        type: "sedan",
+        engine: "ej204x",
+        volume: 2,
+        power: 200},
+    {producer:"subaru",
+        model: "outback",
+        year: 2014,
+        color:"red",
+        type: "hachback",
+        engine: "ej204",
+        volume: 2,
+        power: 165},
+    {producer:"bmw",
+        model: "115",
+        year: 2013,
+        color:"red",
+        type: "hachback",
+        engine: "f15",
+        volume: 1.5,
+        power: 120},
+    {producer:"bmw",
+        model: "315",
+        year: 2010,
+        color:"white",
+        type: "sedan",
+        engine: "f15",
+        volume: 1.5,
+        power: 120},
+    {producer:"bmw",
+        model: "650",
+        year: 2009,
+        color:"black",
+        type: "coupe",
+        ngine: "f60",
+        volume: 6,
+        power: 350},
+    {producer:"bmw",
+        model: "320",
+        year: 2012,
+        color:"red",
+        type: "sedan",
+        engine: "f20",
+        volume: 2,
+        power: 180},
+    {producer:"mercedes",
+        model: "e200",
+        year: 1990,
+        color:"silver",
+        type: "sedan",
+        engine: "eng200",
+        volume: 2,power: 180},
+    {producer:"mercedes",
+        model: "e63",
+        year: 2017,
+        color:"yellow",
+        type: "sedan",
+        engine: "amg63",
+        volume:3,
+        power: 400},
+    {producer:"mercedes",
+        model: "c250",
+        year: 2017,
+        color:"red",
+        type: "sedan",
+        engine: "eng25",
+        volume: 2.5,
+        power: 230} ];
 // Відфільтрувати масив за наступними крітеріями :
 // - двигун більше 3х літрів
+let res=cars.filter(value => value.volume >= 3);
+// console.log(res);
 // - двигун = 2л
+let res1=cars.filter(value => value.volume == 2);
+// console.log(res1);
 // - виробник мерс
+let res2=cars.filter(value => value.producer === 'mercedes');
+// console.log(res2);
 // - двигун більше 3х літрів + виробник мерседес
+let res3=cars.filter(value => value.volume>=3 && value.producer === 'mercedes');
+// console.log(res3);
 // - двигун більше 3х літрів + виробник субару
+let res4=cars.filter(value => value.volume>=3 && value.producer === 'subaru');
+// console.log(res4);
 // - сили більше ніж 300
+let res5=cars.filter(value => value.power>=300 );
+// console.log(res5);
 // - сили більше ніж 300 + виробник субару
+let res6=cars.filter(value => value.power>=300 && value.producer === 'subaru');
+// console.log(res6);
 // - мотор серіі ej
+// let res7=cars.filter(value => value.engine.startsWith('ej'));
+// console.log(res7);
 // - сили більше ніж 300 + виробник субару + мотор серіі ej
+let res8=cars.filter(value => value.power > 300 && value.producer==='subaru');
+// console.log(res8);
 // - двигун меньше 3х літрів + виробник мерседес
+let res10=cars.filter(value => value.volume<3 && value.producer === 'mercedes');
+// console.log(res10);
 // - двигун більше 2л + сили більше 250
+let res11=cars.filter(value => value.volume>2 && value.power === 250);
+// console.log(res11);
 // - сили більше 250  + виробник бмв
+let res12=cars.filter(value => value.power>250 && value.producer === 'bmw');
+// console.log(res12);
 //
-//
+
+
+
+
 //
 let usersWithAddress = [{id: 1, name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}}, {id: 2, name: 'petya', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 1}}, {id: 3, name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}}, {id: 4, name: 'olya', age: 28, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 90}}, {id: 5, name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}}, {id: 6, name: 'anya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 2}}, {id: 7, name: 'oleg', age: 28, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 22}}, {id: 8, name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}}, {id: 9, name: 'masha', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 12}}, {id: 10, name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}}, {id: 11, name: 'max', age: 31, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}}];
 
-
+let Second=JSON.parse(JSON.stringify(usersWithAddress));
 // -- отсортировать его по id пользователей
+// Second.sort((a,b)=>{return a.id-b.id})
+// console.log(usersWithAddress);
+// console.log(Second);
+
 // -- отсортировать его по id пользователей в обратном опрядке
+// Second.sort((a,b)=>{ return b.id-a.id})
+// console.log(Second);
+
 // -- отсортировать его по возрасту пользователей
+// Second.sort((a,b)=>{ return a.age-b.age})
+// console.log(Second);
+
 // -- отсортировать его по возрасту пользователей в обратном порядке
+
+// Second.sort((a,b)=>{ return b.age-a.age})
+// console.log(Second);
+
 // -- отсортировать его по имени пользователей
+// Second.sort((a,b)=>  a.name > b.name );
+// console.log(Second);
+
 // -- отсортировать его по имени пользователей в обратном порядке
+
+// let nameDown=Second.sort((a,b)=> a.name < b.name)
+// console.log(nameDown);
+
+
 // -- отсортировать его по названию улицы  в алфавитном порядке
+// let name=Second.sort((a,b)=>{ return (a.address.street > b.address.street)})
+// console.log(name);
+
 // -- отсортировать его по номеру дома по возрастанию
+
+// let number=Second.sort((a,b)=>{ return (a.address.number - b.address.number)})
+// console.log(number);
 // -- отфильтровать (оставить) тех кто младше 30
+// let res13=Second.filter((value)=>{ return value.age<30})
+// console.log(res13);
 // -- отфильтровать (оставить) тех у кого отрицательный статус
+// let res14=Second.filter((value)=> value.status ==false)
+// console.log(res14);
 // -- отфильтровать (оставить) тех у кого отрицательный статус и младше 30 лет
+// let res15=Second.filter((value)=> value.status ==false && value.age<30)
+// console.log(res15);
 // -- отфильтровать (оставить) тех у кого номер дома четный
+// let res15=Second.filter((value)=>!(value.address.number%2) )
+//  console.log(res15);
 //
 //
 // ===========================

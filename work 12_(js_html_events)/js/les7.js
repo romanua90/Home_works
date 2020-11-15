@@ -3,6 +3,7 @@
 
 // let id= document.createElement('textarea');
 // id.id='text';
+// id.style.display='block';
 // let btn= document.createElement('input');
 // btn.type='submit';
 // btn.style.display='flex';
@@ -10,8 +11,13 @@
 // document.body.appendChild(btn);
 //
 // btn.onclick= ev => {
-//             id.style.display = 'none';
-// }
+//     if (id.style.display==='block') {
+//             id.style.display = 'none'
+//     }
+//     else {
+//         id.style.display = 'block'
+//     }
+//     }
 //
 //     - Создайте кнопку, при клике на которую, она будет скрывать сама себя.
 
@@ -35,7 +41,7 @@
 // let p=document.createElement('p');
 //
 // p.innerText='Please enter your age:';
-// input1.type="text";
+// input1.type="number";
 // input1.style.display='flex';
 // submit.type='submit';
 // submit.value='Read your input';
@@ -48,9 +54,9 @@
 //
 // submit.onclick= ()=> {
 //     if (input1.value) {
-//         if (input1.value < 18) {
+//         if (input1.value < 18 && input1.value>0) {
 //             alert('You are too young!!! Please go home!')
-//         } else {
+//         } else if (input1.value >= 18){
 //             alert('Your are adult! Welcome!');
 //         }
 //     }
@@ -71,9 +77,41 @@
 
 // - Создайте меню, которое раскрывается/сворачивается при клике
 
+// let form=document.forms.test;
+// form.style.display='block';
+// let hideBtn=document.querySelectorAll('#hide input')
+// console.log(hideBtn)
+// hideBtn[0].onclick= ev=>{
+//
+//     if(form.style.display==="block"){
+//         form.style.display='none';
+//     }
+//     else{
+//         form.style.display='block';
+//     }
+// }
+
+//
+// const menu =document.getElementById('a1');
+// const submenu= document.getElementById('submenu');
+// let flag = false;
+// menu.onclick=ev => {
+//     if(flag){
+//         submenu.style.display='block';
+//         flag=false;
+//     }
+//     else{
+//         submenu.style.display='none';
+//         flag=true;
+//     }
+// }
 // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
+
+
 //     Вывести список комментариев в документ, каждый в своем блоке.
 //     Добавьте каждому комментарию по кнопке для сворачивания его body.
+
+
 //
 // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
 //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)

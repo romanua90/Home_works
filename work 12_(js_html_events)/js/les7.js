@@ -106,17 +106,69 @@
 //     }
 // }
 // - Создать список комментариев , пример объекта коментария - {title : 'lorem', body:'lorem ipsum dolo sit ameti'}.
-
-
+let comment=[
+{title : 'Comment1', body:'lorem ipsum dolo s21321it ameti2121'},
+{title : 'Comment2', body:'lorem ipsum dolo sit a3123meti'},
+{title : 'Comment3', body:'lorem ipsum dolo sit am345325eti'},
+{title : 'Comment4', body:'lorem ipsum dolo sit amwefdsfdseti'},
+{title : 'Comment5', body:'lorem ipfwdsfewrrewsum dolo sit ameti'},
+{title : 'Comment6', body:'lorem ipsum dolo sitwerwer ameti'},
+];
 //     Вывести список комментариев в документ, каждый в своем блоке.
 //     Добавьте каждому комментарию по кнопке для сворачивания его body.
+
+// let content=document.createElement('content');
+// comment.forEach(value => {
+//     const div=document.createElement('div');
+//     const p=document.createElement('p');
+//     const h3=document.createElement('h3');
+//     const button=document.createElement('button');
+//     p.innerText=value.body;
+//     p.style.display='block';
+//     h3.innerText=value.title;
+//     div.className='comment';
+//     button.innerText='Hide';
+//     button.style.marginLeft='10px';
+//         button.onclick=ev=> {
+//         if (p.style.display=='block') {
+//             p.style.display='none';
+//         } else {
+//             p.style.display='block';
+//         }
+//     }
+//
+//     h3.appendChild(button);
+//     div.appendChild(h3);
+//     div.appendChild(p);
+//     content.appendChild(div);
+//     document.body.appendChild(content);
+//     })
+
+
+
+
 
 
 //
 // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
 //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
 // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
-//
+btn=document.getElementById('but');
+btn.onclick= ()=> {
+    let f1=document.forms
+    console.log(f1);
+}
+btn1=document.getElementById('but1');
+btn1.onclick=()=>{
+    let ff2=document.forms;
+    ff2.form1.text.setAttribute('type', 'radio')
+    ff2.form1.text1.setAttribute('type', 'radio')
+    ff2.form2.text2.setAttribute('type', 'checkbox')
+    ff2.form2.submit.setAttribute('type','date')
+
+}
+
+
 // - Створити функцію, яка генерує таблицю.
 //     Перший аргумент визначає кількість строк.
 //     Другий параметр визначає кліькіть ячеєк в кожній строці.

@@ -153,20 +153,31 @@ let comment=[
 // - створити 2 форми  по 2 інпути в кожній. ствоирити кнопку при кліку на яку считується та виводиться на консоль інформація з цих 2х форм.
 //     Кнопка повинна лежати за межами форм (Щоб ьуникнути  перезавантаження сторінки)
 // Доступ до інпутів через Forms API. Отже дайте формі та інпутам всі необхідні атрибути.
-btn=document.getElementById('but');
-btn.onclick= ()=> {
-    let f1=document.forms
-    console.log(f1);
-}
-btn1=document.getElementById('but1');
-btn1.onclick=()=>{
-    let ff2=document.forms;
-    ff2.form1.text.setAttribute('type', 'radio')
-    ff2.form1.text1.setAttribute('type', 'radio')
-    ff2.form2.text2.setAttribute('type', 'checkbox')
-    ff2.form2.submit.setAttribute('type','date')
-
-}
+// btn=document.getElementById('but');
+// btn.onclick= ()=> {
+//     let f1=document.forms
+//     for (const f1Key in f1) {
+//         console.log( f1[f1Key]);
+//
+//     }
+// }
+// btn1=document.getElementById('but1');
+//
+// btn1.onclick=()=>{
+//     let ff2=document.forms;
+//     ff2.form1.text.setAttribute('type', 'radio');
+//     ff2.form1.text.setAttribute('name', 'rad');
+//     ff2.form1.text.setAttribute('value', 'YES');
+//
+//     ff2.form1.text1.setAttribute('type', 'radio');
+//     ff2.form1.text1.setAttribute('name', 'rad');
+//     ff2.form1.text1.setAttribute('value', 'NO');
+//
+//     ff2.form1.text1.setAttribute('type', 'radio','name', 'rad')
+//     ff2.form2.text2.setAttribute('type', 'checkbox','name', 'check')
+//     ff2.form2.submit.setAttribute('type','date')
+//
+// }
 
 
 // - Створити функцію, яка генерує таблицю.
@@ -174,10 +185,76 @@ btn1.onclick=()=>{
 //     Другий параметр визначає кліькіть ячеєк в кожній строці.
 //     Третій параметр визначає елемент в який потрібно таблицю додати.
 //
+// function table(r,c,el) {
+//     let element = document.createElement(`${el}`);
+//     element.id='content';
+//     let mytable = document.createElement('table');
+//     mytable.style.border = 'solid 2px black';
+//     let mycolumns;
+//     let myrows;
+//     for (let i = 0; i < r; i++) {
+//         myrows = document.createElement("tr");
+//                 for (let j = 0; j < c; j++) {
+//             mycolumns = document.createElement("td");
+//             mycolumns.innerText = `Element ${(j+1)}`;
+//             mycolumns.style.border = 'solid 1px black';
+//             myrows.appendChild(mycolumns);
 //
+//         }
+//         mytable.appendChild(myrows);
+//         element.appendChild(mytable);
+//         document.body.appendChild(element);
+//     }
+//
+// }
+// let btn2=document.getElementById('but2');
+// btn2.onclick=()=> {
+//     let r= prompt('Введіть кількість рядків:')
+//     let c= prompt('Введіть кількість cтовпців:')
+//     let el=prompt('Введіть елемент в який вставити таблицю:')
+//     table(r,c,el);
+// };
+//
+
+
 // - Створити 3 инпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
+// function table(r,c,el,con) {
+//     let element = document.createElement(`${el}`);
+//     element.id='content';
+//     let mytable = document.createElement('table');
+//     mytable.style.border = 'solid 2px black';
+//     let mycolumns;
+//     let myrows;
+//     for (let i = 0; i < r; i++) {
+//         myrows = document.createElement("tr");
+//         for (let j = 0; j < c; j++) {
+//             mycolumns = document.createElement("td");
+//             mycolumns.innerText = `${con}`;
+//             mycolumns.style.border = 'solid 1px black';
+//             myrows.appendChild(mycolumns);
+//
+//         }
+//         mytable.appendChild(myrows);
+//         element.appendChild(mytable);
+//         document.body.appendChild(element);
+//     }
+//
+// }
+// let btn2=document.getElementById('but2');
+// btn2.onclick=()=> {
+// let myform=document.forms.form3;
+// r=form3.text3.value;
+// c=form3.text4.value;
+// con=form3.text5.value;
+//  r,c,con
+//   ?  table(r,c,'div',con)
+//  :  alert('Будь ласка задайте спочатку параметри таблиці!!!')
+// };
+
+
+
 //
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 //

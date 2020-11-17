@@ -467,14 +467,14 @@ document.body.appendChild(tablebody);*/
 // let mycolumns;
 // let myrows;
 // for (let i = 0; i <10 ; i++) {
-//	 myrows=document.createElement("tr");
-//	 mytable.appendChild(myrows);
-//	 for (let j=0; j<3; j++){
-//	 mycolumns=document.createElement("td");
-//	 mycolumns.innerText='Element '+(j);
-//	 mycolumns.style.border='solid 2px blue';
-//	 myrows.appendChild(mycolumns);
-//	 }
+// 	 myrows=document.createElement("tr");
+// 	 mytable.appendChild(myrows);
+// 	 for (let j=0; j<3; j++){
+// 	 mycolumns=document.createElement("td");
+// 	 mycolumns.innerText='Element '+(j);
+// 	 mycolumns.style.border='solid 2px blue';
+// 	 myrows.appendChild(mycolumns);
+// 	 }
 
 // }
 // document.body.appendChild(mytable);

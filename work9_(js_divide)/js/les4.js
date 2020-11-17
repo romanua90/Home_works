@@ -99,17 +99,17 @@ function biggestNumber(a,b,c) {
 function smallBigNumber (arrOfNum){
 	let max=0;
 	let min=0;
-	for (let i=0; i<arrOfNum.length; i++) {
-		if(arrOfNum[i]>max){
-			max=arrOfNum[i];
-		} else if (arrOfNum[i]<min){
-			min=arrOfNum[i];
+	for (let i=0; i<arguments.length; i++) {
+		if(arguments[i]>max){
+			max=arguments[i];
+		} else if (arguments[i]<min){
+			min=arguments[i];
 		}
 	}
 	console.log(`Biggest value is ${max}`);
 	return min;
 	}
-// let smalbig=smallBigNumber([1,2,3,4,5,3,-4,435234,34,32,-102,-1212, 2342]);
+// let smalbig=smallBigNumber(1,2,3,4,5,3,-4,435234,34,32,-102,-1212, 2342);
 // console.log(smalbig);
 
 //- створити функцію яка виводить масив
@@ -427,15 +427,20 @@ function exponent (){
 		console.log ('YES');
 	}
 }
-//exponent ();
+// exponent ();
 
 
 //2) Deep Copy
 //реалізувати глибоке копіювання обєкту за допомогою рекурсій
 
 //3) Flat
-//Вирівняти багаторівневий масив в однорівневий
-// [1,3, ['Hello, 'Wordd', [9,6,1]], ['oops'], 9] -> [1, 3, 'Hello, 'Wordd', 9, 6, 1, 'oops', 9]
+//Вирівняти багаторівневий масив в однорівневий let arrofN=[1,3, ['Hello, 'Wordd', [9,6,1]], ['oops'], 9] 
+// -> [1, 3, 'Hello, 'Wordd', 9, 6, 1, 'oops', 9];
+let arr= [1,3,['Hello', 'Wordd', [9,6,1]], ['oops'], 9];
+//let normarr = arr.flat(3);
+// console.log(normarr);
+
+ 
 
 
 

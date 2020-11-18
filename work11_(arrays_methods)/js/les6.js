@@ -25,24 +25,24 @@ let map= arrOfNum.map((value, index)  => {
 let arrOfString=['Roman','12','Nadiia','Ukraine','Lviv', 'Mazda','1', 'VW', 'true', 'false','Boolean', 'right', 'left', 'center', 'Poland',
 'Europe', 'USA', 'IT', 'Jun', 'payment is very high'];
 // -- отсортировать его по алфавиту в восходящем порядке.
-let SortedUPstring=JSON.parse(JSON.stringify(arrOfString));
-SortedUPstring.sort(function (a,b){return a.toLowerCase()>b.toLocaleLowerCase() });
+let sortedUPstring=JSON.parse(JSON.stringify(arrOfString));
+sortedUPstring.sort(function (a,b){return a.toLowerCase()>b.toLocaleLowerCase() });
 // console.log(arrOfString);
 // console.log(SortedUPstring);
 // let SortedUPstring = arrOfString.sort((a,b)=>{return a>b });
 // console.log(SortedUPstring);
 // -- отсортировать его по алфавиту  в нисходящем порядке.
-// let SortedDOWNstring = arrOfString.sort((a,b)=>{return a<b });
+// let sortedDOWNstring = arrOfString.sort((a,b)=>{return a<b });
 // console.log(SortedDOWNstring);
 
 // -- отфильтровать слова длиной менее 4х символов
-let FilteredString=arrOfString.filter(a=> {
+let filteredString=arrOfString.filter(a=> {
     if (a.length<4) return a;})
-// console.log(FilteredString);
+// console.log(filteredString);
 
 // -- перебрать массив при помощи map() и получить новый массив в котором все значения будут со знаком "!" в конце
-let MapedString=arrOfString.map((value) => {return  (value=value+'!');})
-// console.log(MapedString);
+let mapedString=arrOfString.map((value) => {return  (value=value+'!');})
+// console.log(mapedString);
 //
 // Все робити через функції масивів (foreach, map ...тд)
 // Дан масив :
@@ -282,7 +282,7 @@ let usersWithAddress = [{id: 1, name: 'vasya', age: 31, status: false, address: 
 
 let Second=JSON.parse(JSON.stringify(usersWithAddress));
 // -- отсортировать его по id пользователей
-// Second.sort((a,b)=>{return a.id-b.id})
+// Second.sort((a,b)=>{a.id-b.id})
 // console.log(usersWithAddress);
 // console.log(Second);
 
@@ -296,7 +296,7 @@ let Second=JSON.parse(JSON.stringify(usersWithAddress));
 
 // -- отсортировать его по возрасту пользователей в обратном порядке
 
-// Second.sort((a,b)=>{ return b.age-a.age})
+// Second.sort((a,b)=> b.age-a.age})
 // console.log(Second);
 
 // -- отсортировать его по имени пользователей

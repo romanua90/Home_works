@@ -264,8 +264,30 @@ let comment=[
 //     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
 // кинути алерт з попередженням.
 //     Перевірку робити при натисканні на кнопку
-//
-//
+
+   const btnDown=document.getElementById('down');
+   const btnUp=document.getElementById('up');
+   let i=0;
+   btnUp.onclick=()=>{
+
+       const image=document.getElementsByTagName('img');
+            if(i<image.length-1) {
+                image[i + 1].style.display = 'block';
+                image[i].style.display = 'none';
+                i++;
+            }
+
+   }
+btnDown.onclick=()=>{
+    const image=document.getElementsByTagName('img');
+     if(i<image.length&& i>0)
+    {
+        image[i-1].style.display='block';
+        image[i].style.display='none';
+        i--;
+    }
+
+}
 // - Сворити масив не цензцрних слів.
 //     Сворити інпут текстового типу.
 //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.

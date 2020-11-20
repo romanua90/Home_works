@@ -259,12 +259,6 @@ let comment=[
 // - Напишите «Карусель» – ленту изображений, которую можно листать влево-вправо нажатием на стрелочки.
 //
 //
-// - Сворити масив не цензцрних слів.
-//     Сворити інпут текстового типу.
-//     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
-// кинути алерт з попередженням.
-//     Перевірку робити при натисканні на кнопку
-
    const btnDown=document.getElementById('down');
    const btnUp=document.getElementById('up');
    let i=0;
@@ -276,51 +270,191 @@ let comment=[
                 image[i].style.display = 'none';
                 i++;
             }
+			else{
+				image[i].style.display = 'none';
+				i=0;
+				image[i].style.display = 'block';
+			}
 
    }
 btnDown.onclick=()=>{
     const image=document.getElementsByTagName('img');
-     if(i<image.length&& i>0)
+     if(i>0)
     {
         image[i-1].style.display='block';
         image[i].style.display='none';
         i--;
     }
-
+	else {
+				image[i].style.display = 'none';
+				i=image.length-1;
+				image[i].style.display = 'block';
+			}
 }
+// - Сворити масив не цензцрних слів.
+//     Сворити інпут текстового типу.
+//     Якщо людина вводить слово і воно міститься в масиві не цензурних слів
+// кинути алерт з попередженням.
+//     Перевірку робити при натисканні на кнопку
+
+/*let arrIfBadWords=['йомайо','блін','дурак', 'лайно'];
+let input1=document.createElement('input');
+let input2=document.createElement('input');
+input1.setAttribute('type','text');
+input2.setAttribute('type','submit');
+input2.setAttribute('value','Перевірити на цензуру');
+document.body.appendChild(input1);
+document.body.appendChild(input2);
+
+input2.onclick =()=> {
+	arrIfBadWords.includes(input1.value)
+	?alert("Це слово нецензурне!")
+	:alert("Все ОК!");
+}
+
+*/
+
 // - Сворити масив не цензцрних слів.
 //     Сворити інпут текстового типу.
 //     Потрібно перевіряти чи не містить ціле речення в собі погані слова.
 //     Кинути алерт з попередженням у випадку якщо містить.
 //     Перевірку робити при натисканні на кнопку
 //
-//
+/*let arrOfBadWords=['йомайо','блін','дурак', 'лайно'];
+let ind=0;
+let input1=document.createElement('input');
+let input2=document.createElement('input');
+input1.setAttribute('type','text');
+input2.setAttribute('type','submit');
+input2.setAttribute('value','Перевірити на цензуру');
+document.body.appendChild(input1);
+document.body.appendChild(input2);
+
+input2.onclick =()=> {
+	while (ind<arrOfBadWords.length){
+if (input1.value.indexOf(arrOfBadWords[i])!=-1)
+	{
+	console.log(input1.value.indexOf(arrOfBadWords[i]));
+	alert("Це речення містить нецензурні слова!")
+	break;
+	}
+	else{
+	alert("Все ОК!");
+	break;
+	}
+	ind++;
+};
+}*/
 //
 // -- создать скрипт, который берет считывает на странице (rules.html) текст и делает сбоку меню-оглавление по всем заголовкам которые есть в тексте.
 //     При клике на пункт оглавления вы должны отправляться к этому пункту в тексте
+
+/*const arrh2=document.getElementsByTagName('h2');
+const content=document.getElementById('content');
+const wrap=document.getElementById('wrap');
+const ul=document.createElement('ul');
+
+for(i=0; i<arrh2.length; i++){
+	const li= document.createElement('li');
+	const a= document.createElement('a');
+	a.href='#'+i;
+	arrh2[i].setAttribute('id', i);
+	a.innerHTML=arrh2[i].innerHTML;
+	li.appendChild(a);
+	ul.appendChild(li);
+}
+content.appendChild(ul);
+content.style='width:30%; float:left';
+wrap.style='width:70%; float:left ';
+*/
+
 //
 // -- взять массив пользователей
-// let usersWithAddress = [
-//     {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-//     {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
-//     {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
-//     {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
-//     {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
-//     {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
-//     {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
-//     {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
-//     {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
-//     {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
-//     {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
-// ];
+ let usersWithAddress = [
+     {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+     {id:2,name: 'petya', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 1}},
+     {id:3,name: 'kolya', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 121}},
+     {id:4,name: 'olya', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 90}},
+     {id:5,name: 'max', age: 30, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 115}},
+     {id:6,name: 'anya', age: 31, status: false, address: {city: 'Kyiv', street: 'Shevchenko', number: 2}},
+     {id:7,name: 'oleg', age: 28, status: false, address: {city: 'Ternopil', street: 'Shevchenko', number: 22}},
+     {id:8,name: 'andrey', age: 29, status: true, address: {city: 'Lviv', street: 'Shevchenko', number: 43}},
+     {id:9,name: 'masha', age: 30, status: true, address: {city: 'Kyiv', street: 'Shevchenko', number: 12}},
+     {id:10,name: 'olya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
+     {id:11,name: 'max', age: 31, status: true, address: {city: 'Ternopil', street: 'Shevchenko', number: 121}}
+ ];
 // Создать три чекбокса. Каждый из них активирует фильтр для вышеуказаного массива. Фильтры могут работать как вместе так и по отдельности.
 // 1й - отфильтровывает пользователей со статусом false (осталяет со статусом false)
 // 2й - оставляет старше 29 лет включительно
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
-//
-//
-//
+
+let input4=document.createElement('input');
+let input5=document.createElement('input');
+let input6=document.createElement('input');
+
+
+let filterBtn=document.createElement('button');
+let arr;
+
+input4.setAttribute('type','checkbox');
+input5.setAttribute('type','checkbox');
+input6.setAttribute('type','checkbox');
+filterBtn.innerText='Фільтрувати';
+document.body.appendChild(input4);
+document.body.appendChild(input5);
+document.body.appendChild(input6);
+document.body.appendChild(filterBtn);
+const general=document.createElement('div');
+const generalTemp=document.createElement('div');
+generalTemp.innerHTML="";
+general.id='content';
+general.innerHTML=JSON.stringify(usersWithAddress);
+document.body.appendChild(general);
+
+
+//////////Function of rendering
+function render(arr){
+let filtered=document.createElement('div');
+filtered.id='filtered content'
+filtered.innerHTML=JSON.stringify(arr);
+return filtered;
+}
+
+
+
+
+filterBtn.onclick=()=>{
+	
+if (input4.checked){
+usersWithAddress.filter((value)=>{
+	if(!value.status){
+		general.style.display='none';
+		document.body.appendChild(render(value));
+			}
+});
+}
+
+
+if (input5.checked){
+usersWithAddress.filter((value)=>{
+	if(value.age>=29){
+document.body.appendChild(render(value));
+	}
+});
+}
+
+if (input6.checked){
+usersWithAddress.filter((value)=>{
+	if(value.address.city==='Kyiv'){
+document.body.appendChild(render(value));
+	}
+	});
+	
+}
+
+}
+
 // *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)
 // при нажатии вперед, вы переходите к дочернему элементу, при еще одном нажатии на "вперед", вы переходите к следующему дочернему элементу (лежащему на одном уровне)
 // НО если у (какого-либо)дочеренего элемента есть дети, то нажатие "вперед" позволяет нам войти внутрь элемента и  выводит первого ребенка. и тд.

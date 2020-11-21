@@ -389,70 +389,73 @@ wrap.style='width:70%; float:left ';
 // 3й - оставляет тех у кого город киев
 // Данные выводить в документ
 
-let input4=document.createElement('input');
-let input5=document.createElement('input');
-let input6=document.createElement('input');
+const input4=document.createElement('input');
+const input5=document.createElement('input');
+const input6=document.createElement('input');
 
+const  label4=document.createElement('label');
+label4.innerText='статус false:';
+label4.style.fontWeight='bold'
+const label5=document.createElement('label');
+label5.innerText='старші 25 років';
+label5.style.fontWeight='bold'
+const label6=document.createElement('label');
+label6.innerText='місто Київ';
+label6.style.fontWeight='bold'
 
-let filterBtn=document.createElement('button');
-let arr;
+const label7=document.createElement('label');
+label7.innerHTML='</br></br>';
 
+const filterBtn=document.createElement('button');
 input4.setAttribute('type','checkbox');
 input5.setAttribute('type','checkbox');
 input6.setAttribute('type','checkbox');
 filterBtn.innerText='Фільтрувати';
+filterBtn.style.fontWeight='bold';
+
+
+
+let general=document.createElement('div');
+general.id='content';
+let filtered=document.createElement('div');
+filtered.id='filtered content';
+filtered.appendChild(render(usersWithAddress));
+
+
+document.body.appendChild(filtered);
+document.body.appendChild(label7 );
+document.body.appendChild(label4);
 document.body.appendChild(input4);
+document.body.appendChild(label5);
 document.body.appendChild(input5);
+document.body.appendChild(label6);
 document.body.appendChild(input6);
 document.body.appendChild(filterBtn);
-const general=document.createElement('div');
-const generalTemp=document.createElement('div');
-generalTemp.innerHTML="";
-general.id='content';
-general.innerHTML=JSON.stringify(usersWithAddress);
-document.body.appendChild(general);
-
 
 //////////Function of rendering
-function render(arr){
-let filtered=document.createElement('div');
-filtered.id='filtered content'
-filtered.innerHTML=JSON.stringify(arr);
-return filtered;
-}
+function render (arr) {
+    const  main= document.createElement("div");
+arr.forEach(item=>{
+    const div=document.createElement("div");
+    div.innerHTML=JSON.stringify(item);
+    main.appendChild(div);
 
-
-
-
-filterBtn.onclick=()=>{
-	
-if (input4.checked){
-usersWithAddress.filter((value)=>{
-	if(!value.status){
-		general.style.display='none';
-		document.body.appendChild(render(value));
-			}
 });
+    return main;
 }
 
 
-if (input5.checked){
-usersWithAddress.filter((value)=>{
-	if(value.age>=29){
-document.body.appendChild(render(value));
-	}
-});
-}
 
-if (input6.checked){
-usersWithAddress.filter((value)=>{
-	if(value.address.city==='Kyiv'){
-document.body.appendChild(render(value));
-	}
-	});
-	
-}
 
+
+filterBtn.onclick=ev=>{
+	let inArr=JSON.parse(JSON.stringify(usersWithAddress));
+if (input4.checked) inArr=inArr.filter((value)=>!value.status);
+
+if (input5.checked) inArr=inArr.filter((value)=>value.age>=29);
+if (input6.checked) inArr=inArr.filter((value)=>value.address.city==='Kyiv');
+filtered.innerHTML='';
+filtered.appendChild(render(inArr));
 }
 
 // *****(Прям овердоз с рекурсией) Создать функцию которая принимает какой-либо элемент DOM-структуры .Функция создает в боди 2 кнопки (назад/вперед)

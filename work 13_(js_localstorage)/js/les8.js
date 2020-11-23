@@ -101,39 +101,110 @@
 // --Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма, в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными объекта
 
 const arrayUsers='ARRAY_USERS';
+let tempUser={};
 const form1=document.forms.notebook;
-
-//console.log(form1);
+const content=document.getElementById('content');
 
 form1.submit.onclick=ev=>{
-	ev.preventDefault();
-	let person={};
+	let person={...tempUser};
+	tempUser={};
 	for (let i=0; i<form1.children.length; i++){
 	let formElement = form1.children[i];
 	if(formElement.name&& formElement.type!='submit'){
 		person[formElement.name]=formElement.value;
 		}
 }
-person.id=new Date().getTime();
+	if(!person.id){
+		person.id=new Date().getTime();
+	}
+
 saveUserToLocal(person);
 }
+getData();
 
 function saveUserToLocal(user){
 	if(localStorage.hasOwnProperty(arrayUsers)){
 	const arrUsers=JSON.parse(localStorage.getItem(arrayUsers));
 	const find=arrUsers.find(value=> value.id === user.id);
 	if(find){
-		const filter=arrUsers.filter(value=>value.id !== user.id);
-		filter.push(user);
-		localStorage.setItem(arrayUsers, JSON.stringify(arrUsers));
+		const filt=arrUsers.filter(value=>value.id !== user.id);
+        filt.push(user);
+
+		localStorage.setItem(arrayUsers, JSON.stringify(filt));
 	}
 	else{
 		arrUsers.push(user);
-		localStorage.setItem(arrayUsers, JSON.stringify(filter));
+		localStorage.setItem(arrayUsers, JSON.stringify(arrUsers));
 	}
 	}
 		else{
 			localStorage.setItem(arrayUsers,JSON.stringify([user]))
-	
+
 }
+}
+
+function getData (){
+if (localStorage.hasOwnProperty(arrayUsers)){
+    const arrUser=JSON.parse(localStorage.getItem(arrayUsers));
+    for (const item of arrUser) {
+        content.appendChild(createDiv(item));
+    }
+}
+}
+
+function createDiv(user){
+    const main=document.createElement('div');
+    let flag=true;
+    for (const key in user) {
+        if (flag){
+            const h3=document.createElement('h3');
+            h3.innerHTML=key+':'+user[key];
+            main.appendChild(h3);
+            flag=false;
+        }
+        else{
+        	const p=document.createElement('p');
+        	p.innerHTML=key+':'+user[key];
+        	main.appendChild(p);
+		}
+    }
+    main.style='width: 300px; border: red 1px solid; float: left';
+    const b1=document.createElement('button');
+	const b2=document.createElement('button');
+
+	b1.innerHTML='Редагувати';
+	b2.innerHTML='Видалити';
+	b1.onclick=function (){
+		editUser(user.id);
+	}
+	b2.onclick=function(){
+		deleteUser(user.id);
+	}
+
+	main.appendChild(b1);
+	main.appendChild(b2);
+    return main;
+}
+
+function deleteUser(id){
+	const parse =JSON.parse(localStorage.getItem(arrayUsers));
+	const filter = parse.filter(user => user.id!== id);
+	localStorage.setItem(arrayUsers, JSON.stringify(filter))
+	location.reload();
+}
+
+function editUser(id){
+	const parse =JSON.parse(localStorage.getItem(arrayUsers));
+	const user = parse.find(user => user.id=== id);
+	for (let i=0; i<form1.children.length; i++){
+		let formElement = form1.children[i];
+		if(formElement.name&& formElement.type!='submit'){
+			for (const key in user) {
+			if(formElement.name === key){
+				formElement.value=user[key];
+			}
+			}
+		}
+	}
+	tempUser=user;
 }

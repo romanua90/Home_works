@@ -50,6 +50,49 @@
 // Сверху над текстареа должны появится стрелочки, с поreturn  localStorage.getItem('text');мощью которых можно перемещаться по истории (не забудьте!чекпоинт истории - нажатеи кнопки сохранить).
 //
 
+// let area=document.getElementById('comment');
+// const btnSave=document.getElementById('save');
+// const btnLast=document.getElementById('last');
+// const btnNext=document.getElementById('next');
+//
+// btnSave.onclick=(ev)=>{
+//   localStorage.setItem(localStorage.length+1,area.value)
+// }
+// btnLast.onclick=()=> {
+//   btnNext.style.visibility = 'visible';
+//   let index;
+//   for (const key in localStorage) {
+//     if (localStorage.hasOwnProperty(key)) {
+//       if (localStorage.getItem(key) === area.value)
+//         index = key;
+//     }
+//   }
+//   if (index === '1'){
+//     btnLast.style.visibility = 'hidden';
+//   return;
+// }
+//   area.value=localStorage.getItem(index-1)
+// }
+//
+//
+//
+// btnNext.onclick=()=> {
+//   btnLast.style.visibility = 'visible';
+//   let index;
+//   for (const key in localStorage) {
+//     if (localStorage.hasOwnProperty(key)) {
+//       if (localStorage.getItem(key) === area.value)
+//         index = key;
+//     }
+//
+//   }
+//   if (index === localStorage.length.toString()){
+//     btnNext.style.visibility = 'hidden';
+//     return;
+//   }
+//   area.value=localStorage.getItem(+index+1)
+// }
+
 
 // - Реализуйте записную книгу, хранящую данные в локальном хранилище.
 //     Данные которые надо сохранять : ФИО, номер, почта, фирма, отдел, день рождения

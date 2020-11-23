@@ -99,3 +99,41 @@
 // Данные вводить через соответсвующую форму.
 // --Каждому контакту добавить кнопку для удаления контакта.
 // --Каждому контакту добавить кнопку редактироваиня. При нажати на нее появляется форма, в которой есть все необходимые инпуты для редактирования, которые уже заполнены данными объекта
+
+const arrayUsers='ARRAY_USERS';
+const form1=document.forms.notebook;
+
+//console.log(form1);
+
+form1.submit.onclick=ev=>{
+	ev.preventDefault();
+	let person={};
+	for (let i=0; i<form1.children.length; i++){
+	let formElement = form1.children[i];
+	if(formElement.name&& formElement.type!='submit'){
+		person[formElement.name]=formElement.value;
+		}
+}
+person.id=new Date().getTime();
+saveUserToLocal(person);
+}
+
+function saveUserToLocal(user){
+	if(localStorage.hasOwnProperty(arrayUsers)){
+	const arrUsers=JSON.parse(localStorage.getItem(arrayUsers));
+	const find=arrUsers.find(value=> value.id === user.id);
+	if(find){
+		const filter=arrUsers.filter(value=>value.id !== user.id);
+		filter.push(user);
+		localStorage.setItem(arrayUsers, JSON.stringify(arrUsers));
+	}
+	else{
+		arrUsers.push(user);
+		localStorage.setItem(arrayUsers, JSON.stringify(filter));
+	}
+	}
+		else{
+			localStorage.setItem(arrayUsers,JSON.stringify([user]))
+	
+}
+}

@@ -23,7 +23,7 @@
 //     console.log('3')
 // }, 1000)
 // console.timeEnd('ev')
-let chance = 0.3;
+let chance = 0.5;
 function myDay (message){
        return new Promise((resolve,reject) =>
     {
@@ -158,44 +158,23 @@ function goSleep(sleepMsg){
 }
 
 
+async function start(){
+    try {
+        let result = await myDay('Будильник ОК');
+        result = await cleanTeeth(result);
+        result = await breakFest(result);
+        result = await wayToWork(result);
+        result = await hardWork(result);
+        result = await coffeBreak(result);
+        result = await endWork(result);
+        result = await eatDinnner(result);
+        result = await goSleep(result);
+    }catch (err){
+        console.log(err);
+    }
+}
+start()
 
 
-myDay('Будильник')
-.then((result)=>{
-    console.log(result);
-    return cleanTeeth('Зуби блистять!')
-})
-    .then((result)=>{
-        console.log(result);
-        return breakFest('Мівіна')
-    })
-.then((result)=>{
-    console.log(result);
-    return wayToWork('Твоя маршрутка 3А')
-})
-.then((result)=> {
-    console.log(result);
-    return hardWork ('Дедлайн був вчора. Працюй активніше!')
-    })
-.then((result)=>{
-    console.log(result);
-    return coffeBreak ('Пора випити кавки!')
-})
-    .then((result)=>{
-        console.log(result);
-        return endWork('Пора закінчувати роботу!')
-    })
-    .then((result)=>{
-        console.log(result);
-        return eatDinnner('Було  дуже смачно!')
-    })
-    .then ((result)=>{
-        console.log(result);
-        return goSleep('Гарних снів')
-    })
-    .then ((result)=>{
-        console.log(result);
-    })
-    .catch(error=>{
-        console.log('error:',error);
-    })
+
+

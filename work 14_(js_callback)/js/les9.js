@@ -39,6 +39,23 @@ function myDay (message){
     })
 }
 
+function cleanTeeth (cleanMsg){
+    console.log('Бігом до ванни чистити зуби!!!');
+    return new Promise((resolve,reject) =>
+    {
+        setTimeout(() => {
+            if( Math.random()>chance){
+                resolve(cleanMsg);
+            }
+            else{
+                reject('Не можу знайти пасту!');
+            }
+
+        }, 2000)
+    })
+}
+
+
 function breakFest(breakMsg){
     console.log('Час гарно поїсти!');
     return new Promise((resolve, reject)=>{
@@ -99,25 +116,84 @@ function coffeBreak (coffeMsg){
         }, 2000)
     })
 }
+function endWork(endMsg){
+    console.log('Час іти на хату!');
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            if(Math.random()>chance){
+                resolve(endMsg)
+            }
+            else{
+                reject('Соррян, треба лишитися після роботи')
+            }
+        }, 1500)
+    })
+}
+
+function eatDinnner(dinnerMsg){
+    console.log('Ти вдома, повечеряй!');
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            if(Math.random()>chance){
+                resolve(dinnerMsg);
+            }
+            else{
+                reject('Вечері немає, хтось забув її приготувати!');
+            }
+        },1500)
+    })
+}
+function goSleep(sleepMsg){
+    console.log('Пора йти спати!');
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            if(Math.random()>chance){
+                resolve(dinnerMsg);
+            }
+            else{
+                reject('Щось не спиться сьогодні!');
+            }
+        },1500)
+    })
+}
+
+
+
 
 myDay('Будильник')
 .then((result)=>{
     console.log(result);
-    return breakFest('Мівіна')
+    return cleanTeeth('Зуби блистять!')
 })
+    .then((result)=>{
+        console.log(result);
+        return breakFest('Мівіна')
+    })
 .then((result)=>{
     console.log(result);
     return wayToWork('Твоя маршрутка 3А')
 })
 .then((result)=> {
     console.log(result);
-    return hardWork ('Деадлайн був вчора. Працюй активніше!')
+    return hardWork ('Дедлайн був вчора. Працюй активніше!')
     })
 .then((result)=>{
     console.log(result);
     return coffeBreak ('Пора випити кавки!')
 })
     .then((result)=>{
+        console.log(result);
+        return endWork('Пора закінчувати роботу!')
+    })
+    .then((result)=>{
+        console.log(result);
+        return eatDinnner('Було  дуже смачно!')
+    })
+    .then ((result)=>{
+        console.log(result);
+        return goSleep('Гарних снів')
+    })
+    .then ((result)=>{
         console.log(result);
     })
     .catch(error=>{
